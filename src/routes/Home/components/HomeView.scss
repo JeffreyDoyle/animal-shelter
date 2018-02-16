@@ -1,0 +1,133 @@
+.duck {
+  display: block;
+  width: 120px;
+  margin: 1.5rem auto;
+}
+
+$blur: 4px;
+
+.background-hovered {
+  filter: blur(4px);
+}
+
+.HomeView {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  margin: 3rem;
+
+
+
+  .imgSection {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 6rem);
+
+    width: 50%;
+
+    position: relative;
+
+
+    .topSquare {
+
+      position: absolute;
+
+      height: 500px;
+      width: 500px;
+
+      border: 1px solid #f26c4f;
+      color: #393939;
+      background-color: #f26c4f;
+
+    }
+
+    .image {
+
+      position: absolute;
+      height: 300px;
+      width: 300px;
+
+      border-radius:5px;
+
+    }
+
+    .bottomSquare {
+
+      position: absolute;
+
+      top: 50%;
+      left: 56%;
+
+      height: 300px;
+      width: 300px;
+
+      border: 1px solid #66d9d3;
+      color: #66d9d3;
+      background-color: #66d9d3;
+
+      border-radius:5px;
+
+      filter: opacity(0.9);
+
+    }
+
+
+  }
+
+  .contentSection {
+
+    display: flex;
+    justify-content: center;
+    width: 50%;
+
+
+    .title {
+
+      font-size: 24px;
+      margin-top: 250px;
+      top: 250px;
+      color: #393939;
+    }
+
+    .getStartedButtonWrapper {
+
+      position: absolute;
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      .getStartedButton {
+        height: 50px;
+        width: 100px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border: 1px solid #f26c4f;
+        color: #393939;
+
+        cursor: pointer;
+
+        &:hover {
+
+          #background {
+            filter: blur(4px);
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+
+
+}
+
