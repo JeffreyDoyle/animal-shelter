@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {browserHistory} from 'react-router';
 import '../styles/Results.scss'
 import ResultCard from './ResultCard';
+import Header from './Header';
 
 class Results extends Component {
   constructor (props) {
@@ -14,26 +15,38 @@ class Results extends Component {
   render () {
     console.log('render results', this.props);
     return (
-      <div className={'ResultsWrapper'}>
+        <div className={'ResultsWrapper'}>
 
-        {
-          this.props.results ? this.props.results.map((result) => {
+          <Header />
 
-            return (
-              <ResultCard data={result} />
-            )
-          })
-            :
-            null
-        }
+          <div className={'resultsContent'}>
 
-        <ResultCard data={{ name: 'Jimmy', species: 'Dog', breed: 'Retriever' }} />
+            {
+              this.props.results ? this.props.results.map((result) => {
 
-        <ResultCard data={{ name: 'Timmy', species: 'Car', breed: 'Bulldog' }} />
+                return (
+                  <ResultCard data={result} />
+                )
+              })
+                :
+                null
+            }
 
-        <ResultCard data={{ name: 'Mr.Bones', species: 'Dog', breed: 'French' }} />
+            <ResultCard data={{ name: 'Jimmy', species: 'Dog', breed: 'Retriever' }} />
 
-      </div>
+            <ResultCard data={{ name: 'Timmy', species: 'Car', breed: 'Bulldog' }} />
+
+            <ResultCard data={{ name: 'Mr.Bones', species: 'Dog', breed: 'French' }} />
+
+            <ResultCard data={{ name: 'Mr.Bones', species: 'Dog', breed: 'French' }} />
+
+            <ResultCard data={{ name: 'Mr.Bones', species: 'Dog', breed: 'French' }} />
+
+            <ResultCard data={{ name: 'Mr.Bones', species: 'Dog', breed: 'French' }} />
+
+          </div>
+
+        </div>
     )
   }
 }

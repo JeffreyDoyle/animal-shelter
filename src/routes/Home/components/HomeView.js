@@ -34,10 +34,15 @@ class HomeView extends Component {
             Adopt a pet, change a life.
           </div>
 
+          <input placeholder={"Your email"}/>
 
           <div className={'getStartedButtonWrapper'}>
+
             <div className={'getStartedButton'} onClick={() => {browserHistory.push('/search')}}>
-              Get Started
+              Login as Adopter
+            </div>
+            <div className={'getStartedButton'} onClick={() => {browserHistory.push('/search')}}>
+              Login as Staff
             </div>
           </div>
 

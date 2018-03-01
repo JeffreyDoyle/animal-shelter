@@ -82,27 +82,45 @@ $blur: 4px;
 
     display: flex;
     justify-content: center;
+    flex-direction: column;
     width: 50%;
-
+    padding-left:4rem;
 
     .title {
 
       font-size: 24px;
-      margin-top: 250px;
       top: 250px;
       color: #393939;
+      margin-bottom: 2rem;
+      text-align: center;
+
+    }
+
+    input {
+
+      margin-bottom: 2rem;
+      width: calc(300px);
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+
+      padding-left: 0.5rem;
+
+      border-radius: 5px;
+      border: 1px solid #393939;
+
     }
 
     .getStartedButtonWrapper {
 
-      position: absolute;
-      height: 100%;
       display: flex;
       align-items: center;
+      margin-bottom: 2rem;
+      justify-content: center;
 
       .getStartedButton {
         height: 50px;
-        width: 100px;
+        width: 150px;
 
         display: flex;
         justify-content: center;
@@ -112,6 +130,7 @@ $blur: 4px;
         color: #393939;
 
         cursor: pointer;
+        margin-right: 1rem;
 
         &:hover {
 
