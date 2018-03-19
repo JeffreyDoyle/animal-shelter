@@ -14,11 +14,11 @@ class Header extends Component {
     return (
       <div className={'header'}>
 
-        <div className={'viewApplicationsButton'}>
+        <div className={'viewApplicationsButton'} onClick={() => {browserHistory.push('/applications')}}>
           View Applications
         </div>
 
-        <div className={'viewAccountButton'}>
+        <div className={'viewAccountButton'} onClick={() => {browserHistory.push('/account')}}>
           My Account
         </div>
 

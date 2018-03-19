@@ -8,7 +8,9 @@
     flex-direction: row;
     flex-wrap: wrap;
 
-    justify-content: left;
+    justify-content: center;
+
+    padding-bottom: 2rem;
 
     height: calc(100vh - 100px);
     overflow: scroll;

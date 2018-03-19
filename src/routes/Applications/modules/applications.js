@@ -21,13 +21,13 @@ export const getAllApplications = () => {
   })
 
   return {
-    type: GET_SPECIES,
+    type: GET_ALL_APPLICATIONS,
     payload: request
   }
 }
 
 export const getOverseenApplications = (staffId) => {
-  const request = axios.post('/query/getSpecies', {
+  const request = axios.post('/application/oversee', {
     staffId: staffId
   })
 
@@ -37,9 +37,9 @@ export const getOverseenApplications = (staffId) => {
   }
 }
 
-export const getApplicantApplications = (breed) => {
-  const request = axios.post('/query/getSpecies', {
-    breed: breed
+export const getApplicantApplications = (applicantId) => {
+  const request = axios.post('/application/applicant', {
+    applicantId: applicantId
   })
 
   return {
