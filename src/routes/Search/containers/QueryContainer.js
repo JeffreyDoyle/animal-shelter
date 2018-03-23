@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { getSpecies, getBreeds } from '../modules/search'
+import { query, getAll } from '../modules/search'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
@@ -13,13 +13,11 @@ import Query from '../components/Query'
     implementing our wrapper around increment; the component doesn't care   */
 
 const mapDispatchToProps = {
-  getSpecies : () => getSpecies(),
-  getBreeds : (species) => getBreeds(species)
+  query : (queryType) => query(queryType),
+  getAll : () => getAll()
 }
 
 const mapStateToProps = (state) => ({
-  species : state.search.species,
-  breeds : state.search.breeds,
 })
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:

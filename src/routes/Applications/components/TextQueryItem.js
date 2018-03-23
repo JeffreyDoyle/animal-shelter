@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { browserHistory } from 'react-router'
-import '../styles/Query.scss'
+import '../styles/ApplicationsQuery.scss'
 
-class RadioQueryItem extends Component {
+class TextQueryItem extends Component {
   constructor (props) {
     super(props)
   }
@@ -19,7 +19,7 @@ class RadioQueryItem extends Component {
           <div className={'queryTitle'}>
             {this.props.title}
           </div>
-          <input type={'radio'} name={'query-type'} className={'input-radio'} onClick={this.props.action}/>
+          <input className={'input'} />
 
         </div>
 
@@ -28,4 +28,4 @@ class RadioQueryItem extends Component {
   }
 }
 
-export default RadioQueryItem
+export default TextQueryItem

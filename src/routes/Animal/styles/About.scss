@@ -13,7 +13,7 @@
     margin: 3rem;
 
     .description {
-      color: #393939;
+      color: white;
     }
 
     .title {
@@ -52,6 +52,27 @@
         display: flex;
         justify-content: center;
       }
+    }
+
+    .deleteButton {
+      width: 200px;
+      height: 50px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 2rem;
+
+      color: white;
+
+      background-color: #f26c4f;
+      border-radius: 5px;
+
+      cursor: pointer;
+
     }
 
 

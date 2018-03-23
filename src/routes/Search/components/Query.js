@@ -35,13 +35,13 @@ class Query extends Component {
 
           {/*<SelectQueryItem title={'Location'} options={[]} />*/}
 
-          <RadioQueryItem title={'Max Adoption Fee'} />
+          <RadioQueryItem title={'Max Adoption Fee'} action={() => {this.props.query('max')}}/>
 
-          <RadioQueryItem title={'Average Adoption Fee'} />
+          <RadioQueryItem title={'Average Adoption Fee'} action={() => {this.props.query('avg')}}/>
 
-          <RadioQueryItem title={'Min Adoption Fee'} />
+          <RadioQueryItem title={'Min Adoption Fee'} action={() => {this.props.query('min')}}/>
 
-          <div className={'queryButton'}>
+          <div className={'queryButton'} onClick={() => {this.props.getAll()}}>
             Reset
           </div>
 

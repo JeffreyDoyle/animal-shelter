@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {browserHistory} from 'react-router';
 import '../styles/About.scss'
+import {deleteAnimal} from "../modules/animal";
 
 
 class Animal extends Component {
@@ -18,6 +19,11 @@ class Animal extends Component {
 
   };
 
+  updateAnimal = () => {
+
+
+  }
+
   render () {
 
     return (
@@ -29,28 +35,36 @@ class Animal extends Component {
           </div>
 
           <div className={'item'}>
-            <div className={'description'}>Species:</div><div>Dog</div>
+            <div className={'description'}>Species:</div><input type="text" name="species" placeholder="Dog" />
           </div>
 
           <div className={'item'}>
-            <div className={'description'}>Breed:</div><div>Golden Retriever</div>
+            <div className={'description'}>Breed:</div><input type="text" name="species" placeholder="Golden Retriever" />
           </div>
 
           <div className={'item'}>
-            <div className={'description'}>Age:</div><div>10</div>
+            <div className={'description'}>Age:</div><input type="text" name="age" placeholder="10" />
           </div>
 
           <div className={'item'}>
-            <div className={'description'}>Sex:</div><div>Male</div>
+            <div className={'description'}>Sex:</div><input type="text" name="sex" placeholder="Male" />
           </div>
 
           <div className={'item'}>
-            <div className={'description'}>Type:</div><div>Domestic</div>
+            <div className={'description'}>Type:</div><input type="text" name="type" placeholder="Domestic" />
           </div>
 
-          <div className={'euthenization-timer'}>
-            <div className={'euth-title'}>TIME UNTIL EUTHENIZATION</div>
-            <div className={'countdown'}>{this.state.timer} days</div>
+          {/*<div className={'euthenization-timer'}>*/}
+            {/*<div className={'euth-title'}>TIME UNTIL EUTHENIZATION</div>*/}
+            {/*<div className={'countdown'}>{this.state.timer} days</div>*/}
+          {/*</div>*/}
+
+          <div className={'deleteButton'} onClick={() => {this.props.deleteAnimal('a')}}>
+            Update this Animal
+          </div>
+
+          <div className={'deleteButton'} onClick={() => {this.props.deleteAnimal('a')}}>
+            Delete this Animal
           </div>
 
         </div>

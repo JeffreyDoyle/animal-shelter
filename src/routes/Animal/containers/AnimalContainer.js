@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { getAnimal } from '../modules/animal'
+import { getAnimal, deleteAnimal } from '../modules/animal'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
@@ -14,6 +14,7 @@ import Animal from '../components/Animal'
 
 const mapDispatchToProps = {
   getAnimal : (id) => getAnimal(id),
+  deleteAnimal : (id) => deleteAnimal(id)
 }
 
 const mapStateToProps = (state) => ({

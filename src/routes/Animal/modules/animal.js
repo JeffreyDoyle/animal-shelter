@@ -1,10 +1,11 @@
 import axios from 'axios'
-
+import {browserHistory} from 'react-router';
 // ------------------------------------
 // Constants
 // ------------------------------------
 
 export const GET_ANIMAL = 'GET_ANIMAL'
+export const DELETE_ANIMAL = 'DELETE_ANIMAL'
 
 
 // ------------------------------------
@@ -17,7 +18,7 @@ export const GET_ANIMAL = 'GET_ANIMAL'
 
 export const getAnimal = (id) => {
   const request = axios.post('/animal/getAnimal', {
-    id: id
+    animalId: id
   })
 
   return {
@@ -26,9 +27,43 @@ export const getAnimal = (id) => {
   }
 }
 
+export const deleteAnimal = (id) => {
+  const request = axios.post('/animal/delete', {
+    animalId: id
+  })
+
+  browserHistory.push('/search');
+
+  return {
+    type: DELETE_ANIMAL,
+    payload: request
+  }
+}
+
+export const updateAnimal = (animal) => {
+  const request = axios.post('/animal/delete', {
+    animalId: animal.animalId,
+    imgUrl: animal.imgUrl,
+    birthdate: animal.birthdate,
+    weight: animal.weight,
+    animalName: animal.animalName,
+    specialNeeds: animal.specialNeeds,
+    intakeDate: animal.intakeDate,
+    sex: animal.sex,
+  })
+
+  browserHistory.push('/search');
+
+  return {
+    type: DELETE_ANIMAL,
+    payload: request
+  }
+}
+
 
 export const actions = {
   getAnimal,
+  deleteAnimal
 }
 
 // ------------------------------------

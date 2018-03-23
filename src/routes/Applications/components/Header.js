@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import {browserHistory} from 'react-router';
-import '../styles/ApplicationsHeader.scss'
+import '../styles/Header.scss'
 
-class Applications extends Component {
+class Header extends Component {
   constructor (props) {
     super(props)
   }
@@ -12,30 +12,23 @@ class Applications extends Component {
 
   render () {
     return (
-      <div className={'ApplicationsHeaderWrapper'}>
+      <div className={'header'}>
 
-        <div className={'leftSide'}>
-          Animal Applications
+        <div className={'viewApplicationsButton'} onClick={() => {browserHistory.push('/search')}}>
+          Search Animals
         </div>
 
-        <div className={'rightSide'}>
-
-          <div className={'viewApplicationsButton'} onClick={() => {browserHistory.push('/search')}}>
-            Search Animals
-          </div>
-
-          <div className={'viewApplicationsButton'} onClick={() => {browserHistory.push('/account')}}>
-            My Account
-          </div>
-
-          <div className={'viewApplicationsButton'} onClick={() => {browserHistory.push('/advanced')}}>
-            Advanced
-          </div>
-
+        <div className={'viewAccountButton'} onClick={() => {browserHistory.push('/account')}}>
+          My Account
         </div>
+
+        <div className={'viewAccountButton'} onClick={() => {browserHistory.push('/advanced')}}>
+          Advanced
+        </div>
+
       </div>
     )
   }
 }
 
-export default Applications
+export default Header

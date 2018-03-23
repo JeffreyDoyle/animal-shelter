@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { browserHistory } from 'react-router'
-import '../styles/Query.scss'
+import '../styles/ApplicationsQuery.scss'
 
 class RadioQueryItem extends Component {
   constructor (props) {

@@ -4,10 +4,11 @@ import axios from 'axios'
 // Constants
 // ------------------------------------
 
-export const GET_SPECIES = 'GET_SPECIES'
-export const GET_BREEDS = 'GET_BREEDS'
+// export const GET_SPECIES = 'GET_SPECIES'
+// export const GET_BREEDS = 'GET_BREEDS'
 
 export const QUERY = 'QUERY'
+export const GET_ALL = 'GET_ALL'
 
 // ------------------------------------
 // Actions
@@ -17,48 +18,63 @@ export const QUERY = 'QUERY'
     returns a function for lazy evaluation. It is incredibly useful for
     creating async actions, especially when combined with redux-thunk! */
 
-export const getSpecies = () => {
-  const request = axios.post('/query/getSpecies', {
-  })
+// export const getSpecies = () => {
+//   const request = axios.post('/query/getSpecies', {
+//   })
+//
+//   return {
+//     type: GET_SPECIES,
+//     payload: request
+//   }
+// }
+//
+// export const getBreeds = (breed) => {
+//   const request = axios.post('/query/getSpecies', {
+//     breed: breed
+//   })
+//
+//   return {
+//     type: GET_BREEDS,
+//     payload: request
+//   }
+// }
 
+export const getAll = () => {
+  const request = axios.post('/animal/getall', {
+  })
   return {
-    type: GET_SPECIES,
+    type: GET_ALL,
     payload: request
   }
 }
 
-export const getBreeds = (breed) => {
-  const request = axios.post('/query/getSpecies', {
-    breed: breed
+export const query = (queryType) => {
+  const request = axios.post('/animal/query', {
+    query: queryType
   })
 
   return {
-    type: GET_BREEDS,
+    type: QUERY,
     payload: request
   }
-}
-
-export const query = () => {
-
 }
 
 export const actions = {
   query,
-  getSpecies,
-  getBreeds,
+  getAll
 }
 
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [GET_SPECIES]    : (state, action) => ({
+  [QUERY] : (state, action) => ({
     ...state,
-    species: action.payload.data,
+    results: action.payload.data,
   }),
-  [GET_BREEDS] : (state, action) => ({
+  [GET_ALL] : (state, action) => ({
     ...state,
-    breeds: action.payload.data,
+    results: action.payload.data,
   })
 }
 
@@ -66,8 +82,6 @@ const ACTION_HANDLERS = {
 // Reducer
 // ------------------------------------
 const initialState = {
-  breeds: [],
-  species: [],
   results: []
 }
 
