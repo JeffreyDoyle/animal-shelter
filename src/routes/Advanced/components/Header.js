@@ -13,11 +13,9 @@ class Applications extends Component {
   render () {
     return (
       <div className={'ApplicationsHeaderWrapper'}>
-
         <div className={'leftSide'}>
-          Animal Applications
+          Advanced
         </div>
-
         <div className={'rightSide'}>
 
           <div className={'viewApplicationsButton'} onClick={() => {browserHistory.push('/search')}}>
@@ -26,10 +24,6 @@ class Applications extends Component {
 
           <div className={'viewApplicationsButton'} onClick={() => {browserHistory.push('/account')}}>
             My Account
-          </div>
-
-          <div className={'viewApplicationsButton'} onClick={() => {browserHistory.push('/advanced')}}>
-            Advanced
           </div>
 
         </div>

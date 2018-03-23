@@ -5,6 +5,7 @@ import CounterRoute from './Counter'
 import SearchRoute from './Search'
 import AnimalRoute from './Animal'
 import ApplicationsRoute from './Applications'
+import AdvancedRoute from './Advanced';
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -12,12 +13,13 @@ import ApplicationsRoute from './Applications'
 export const createRoutes = (store) => ({
   path        : '/',
   component   : CoreLayout,
-  indexRoute  : Home,
+  indexRoute  : Home(store),
   childRoutes : [
     CounterRoute(store),
     SearchRoute(store),
     AnimalRoute(store),
     ApplicationsRoute(store),
+    AdvancedRoute(store),
   ]
 })
 

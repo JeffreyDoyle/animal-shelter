@@ -34,14 +34,14 @@ class HomeView extends Component {
             Adopt a pet, change a life.
           </div>
 
-          <input placeholder={"Your email"}/>
+          <input id="email-input" placeholder={"Your email"}/>
 
           <div className={'getStartedButtonWrapper'}>
 
-            <div className={'getStartedButton'} onClick={() => {browserHistory.push('/search')}}>
+            <div className={'getStartedButton'} onClick={() => {this.props.login(document.getElementById('email-input').value, 'applicant')}}>
               Login as Adopter
             </div>
-            <div className={'getStartedButton'} onClick={() => {browserHistory.push('/search')}}>
+            <div className={'getStartedButton'} onClick={() => {this.props.login(document.getElementById('email-input').value, 'staff')}}>
               Login as Staff
             </div>
           </div>
