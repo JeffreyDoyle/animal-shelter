@@ -14,13 +14,17 @@ class Animal extends Component {
   componentWillMount () {
   }
 
+  componentDidMount() {
+    this.props.getAnimal(this.props.animalId);
+  }
+
   render () {
 
     return (
       <div className={'AnimalWrapper'}>
 
-        <About deleteAnimal={this.props.deleteAnimal} />
-        <Details />
+        <About data={this.props.animal} deleteAnimal={this.props.deleteAnimal} />
+        <Details data={this.props.animal} />
 
       </div>
     )

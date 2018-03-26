@@ -1,5 +1,5 @@
 import { injectReducer } from '../../store/reducers';
-import { getAnimal } from './modules/animal';
+import { getAnimal, setAnimalId } from './modules/animal';
 
 export default (store) => ({
   path : 'animal',
@@ -8,6 +8,7 @@ export default (store) => ({
     /*  Webpack - use 'require.ensure' to create a split point
         and embed an async module loader (jsonp) when bundling   */
     if (nextState.location.query.id) {
+      store.dispatch(setAnimalId(nextState.location.query.id));
       store.dispatch(getAnimal(nextState.location.query.id));
     }
 

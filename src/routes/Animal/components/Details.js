@@ -19,7 +19,7 @@ class Animal extends Component {
 
         <div className={'DetailsInner'}>
 
-          <img className={'image'} src={'http://www.dogbreedslist.info/uploads/allimg/dog-pictures/Golden-Retriever-2.jpg'} />
+          <img className={'image'} src={this.props.data.imgUrl} />
 
 
 

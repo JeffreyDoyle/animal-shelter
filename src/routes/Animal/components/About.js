@@ -21,7 +21,10 @@ class Animal extends Component {
 
   updateAnimal = () => {
 
+    this.props.updateAnimal({
 
+
+    })
   }
 
   render () {
@@ -31,15 +34,15 @@ class Animal extends Component {
         <div className={'AboutInner'}>
 
           <div className={'title'}>
-            Jimmy
+            {this.props.data.animalName}
           </div>
 
           <div className={'item'}>
-            <div className={'description'}>Species:</div><input type="text" name="species" placeholder="Dog" />
+            <div className={'description'}>Species:</div><input id="animal-species" type="text" name="species" placeholder="" />
           </div>
 
           <div className={'item'}>
-            <div className={'description'}>Breed:</div><input type="text" name="species" placeholder="Golden Retriever" />
+            <div className={'description'}>Breed:</div><input id="animal-breed" type="text" name="species" placeholder="Golden Retriever" />
           </div>
 
           <div className={'item'}>
@@ -47,11 +50,11 @@ class Animal extends Component {
           </div>
 
           <div className={'item'}>
-            <div className={'description'}>Sex:</div><input type="text" name="sex" placeholder="Male" />
+            <div className={'description'}>Sex:</div><input id="animal-sex" type="text" name="sex" placeholder="Male" />
           </div>
 
           <div className={'item'}>
-            <div className={'description'}>Type:</div><input type="text" name="type" placeholder="Domestic" />
+            <div className={'description'}>Type:</div><input id="animal-type" type="text" name="type" placeholder="Domestic" />
           </div>
 
           {/*<div className={'euthenization-timer'}>*/}
@@ -59,7 +62,7 @@ class Animal extends Component {
             {/*<div className={'countdown'}>{this.state.timer} days</div>*/}
           {/*</div>*/}
 
-          <div className={'deleteButton'} onClick={() => {this.props.deleteAnimal('a')}}>
+          <div className={'deleteButton'} onClick={this.updateAnimal}>
             Update this Animal
           </div>
 

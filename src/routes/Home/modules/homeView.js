@@ -19,6 +19,7 @@ export const login = (emailId, userType) => (dispatch) => {
   dispatch(_login(emailId, userType)).then(
     response => {
       console.log('email: ' + emailId + ", userType: " + userType);
+      console.log(response);
       if (response.payload.data) {
         browserHistory.push('/search');
       } else {
@@ -33,6 +34,8 @@ export const _login = (emailId, userType) => {
     emailId: emailId,
     userType: userType
   })
+
+  console.log(emailId, userType);
 
   return {
     type: LOGIN,
@@ -50,10 +53,10 @@ export const actions = {
 const ACTION_HANDLERS = {
   [LOGIN]    : (state, action) => ({
     ...state,
-    email: action.payload.data.email,
-    userType: action.payload.data.userType,
-    phone: action.payload.data.phone,
-    name: action.payload.data.name,
+    email: action.payload.data ? action.payload.data.email : "",
+    userType: action.payload.data ? action.payload.data.userType : "",
+    phone: action.payload.data ? action.payload.data.phone : "",
+    name: action.payload.data ? action.payload.data.name : "",
   })
 }
 

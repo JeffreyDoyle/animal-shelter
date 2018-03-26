@@ -5,20 +5,20 @@
   .LocationsWithAllAnimalsInner {
 
     display: flex;
+    flex-direction: column;
 
     margin: 2rem;
 
     .LocationsWithAllAnimalsButton {
       background-color: #393939;
       height: 80px;
-      width: 200px;
+      width: 280px;
       border-radius: 5px;
       color: white;
 
       display: flex;
       align-items: center;
-
-      text-align: center;
+      justify-content: center;
 
       cursor: pointer;
     }

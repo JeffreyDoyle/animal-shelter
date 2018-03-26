@@ -19,6 +19,7 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state) => ({
   animal : state.animal.animal,
+  animalId: state.animal.animalId
 })
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:

@@ -32,17 +32,17 @@ class Results extends Component {
                 null
             }
 
-            <ResultCard data={{ name: 'Jimmy', species: 'Dog', breed: 'Retriever' }} />
+            {/*<ResultCard data={{ name: 'Jimmy', species: 'Dog', breed: 'Retriever' }} />*/}
 
-            <ResultCard data={{ name: 'Timmy', species: 'Car', breed: 'Bulldog' }} />
+            {/*<ResultCard data={{ name: 'Timmy', species: 'Car', breed: 'Bulldog' }} />*/}
 
-            <ResultCard data={{ name: 'Mr.Bones', species: 'Dog', breed: 'French' }} />
+            {/*<ResultCard data={{ name: 'Mr.Bones', species: 'Dog', breed: 'French' }} />*/}
 
-            <ResultCard data={{ name: 'Mr.Bones', species: 'Dog', breed: 'French' }} />
+            {/*<ResultCard data={{ name: 'Mr.Bones', species: 'Dog', breed: 'French' }} />*/}
 
-            <ResultCard data={{ name: 'Mr.Bones', species: 'Dog', breed: 'French' }} />
+            {/*<ResultCard data={{ name: 'Mr.Bones', species: 'Dog', breed: 'French' }} />*/}
 
-            <ResultCard data={{ name: 'Mr.Bones', species: 'Dog', breed: 'French' }} />
+            {/*<ResultCard data={{ name: 'Mr.Bones', species: 'Dog', breed: 'French' }} />*/}
 
           </div>
 

@@ -34,7 +34,7 @@ class HomeView extends Component {
             Adopt a pet, change a life.
           </div>
 
-          <input id="email-input" placeholder={"Your email"}/>
+          <input id="email-input" placeholder={"Your phone"}/>
 
           <div className={'getStartedButtonWrapper'}>
 

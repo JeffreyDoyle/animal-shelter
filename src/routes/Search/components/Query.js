@@ -13,6 +13,10 @@ class Query extends Component {
   componentWillMount () {
   }
 
+  componentDidMount () {
+    this.props.getAll();
+  }
+
   render () {
     return (
       <div className={'QueryWrapper'}>

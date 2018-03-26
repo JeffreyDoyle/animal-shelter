@@ -14,16 +14,16 @@ class Results extends Component {
   render () {
     console.log('render results', this.props);
     return (
-      <div className={'ResultCardWrapper'} onClick={() => {browserHistory.push('/animal')}}>
+      <div className={'ResultCardWrapper'} onClick={() => {browserHistory.push('/animal?id=' + this.props.data.animalId)}}>
 
         <div className={'ResultCardInner'}>
 
-          <img className={'image'} src={'http://www.dogbreedslist.info/uploads/allimg/dog-pictures/Golden-Retriever-2.jpg'} />
+          <img className={'image'} src={this.props.data.imgUrl} />
 
           <div className={'content'}>
-            <div className={'title'}>Jimmy</div>
-            <div className={'breed'}>Golden Retriever</div>
-            <div className={'location'}>Vancouver</div>
+            <div className={'title'}>{this.props.data.animalName}</div>
+            <div className={'breed'}>Sex: {this.props.data.sex}</div>
+            <div className={'location'}>Adoption Fee: ${this.props.data.price}</div>
           </div>
 
         </div>
