@@ -6,7 +6,7 @@ import AdvancedContainer from '../containers/AdvancedContainer';
 
 class Advanced extends Component {
   constructor (props) {
-    super(props)
+    super(props)x
   }
 
   componentWillMount () {
