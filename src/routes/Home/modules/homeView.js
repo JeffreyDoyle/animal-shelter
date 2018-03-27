@@ -31,7 +31,7 @@ export const login = (emailId, userType) => (dispatch) => {
 
 export const _login = (emailId, userType) => {
   const request = axios.post('/profile', {
-    emailId: emailId,
+    phone: emailId,
     userType: userType
   })
 

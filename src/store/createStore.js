@@ -41,9 +41,10 @@ const createStore = (initialState = {}) => {
   // To unsubscribe, invoke `store.unsubscribeHistory()` anytime
   store.unsubscribeHistory = browserHistory.listen(updateLocation(store))
 
-  const URL = 'ec2-54-211-95-78.compute-1.amazonaws.com:8080/' // DEV SERVER
+  const URL = 'http://ec2-54-211-95-78.compute-1.amazonaws.com:8080/' // DEV SERVER
   // const URL = 'http://54.213.178.115:8080/'; // STG SERVER
   axios.defaults.baseURL = URL
+  //axios.defaults.headers = {'Content-Type': 'text/plain'}
 
   if (module.hot) {
     module.hot.accept('./reducers', () => {

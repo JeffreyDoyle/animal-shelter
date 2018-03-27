@@ -6,6 +6,7 @@ import {browserHistory} from 'react-router';
 
 export const GET_ANIMAL = 'GET_ANIMAL'
 export const DELETE_ANIMAL = 'DELETE_ANIMAL'
+export const UPDATE_ANIMAL = 'UPDATE_ANIMAL'
 export const SET_ANIMAL_ID = 'SET_ANIMAL_ID'
 
 
@@ -25,7 +26,7 @@ export const setAnimalId = (id) => {
 }
 
 export const getAnimal = (id) => {
-  const request = axios.post('/animal/getAnimal', {
+  const request = axios.post('/animal/getone', {
     animalId: id
   })
 
@@ -49,7 +50,7 @@ export const deleteAnimal = (id) => {
 }
 
 export const updateAnimal = (animal) => {
-  const request = axios.post('/animal/delete', {
+  const request = axios.post('/animal/update', {
     animalId: animal.animalId,
     imgUrl: animal.imgUrl,
     birthdate: animal.birthdate,
@@ -60,10 +61,8 @@ export const updateAnimal = (animal) => {
     sex: animal.sex,
   })
 
-  browserHistory.push('/search');
-
   return {
-    type: DELETE_ANIMAL,
+    type: UPDATE_ANIMAL,
     payload: request
   }
 }
@@ -86,6 +85,10 @@ const ACTION_HANDLERS = {
   [SET_ANIMAL_ID]    : (state, action) => ({
     ...state,
     animalId: action.id,
+  }),
+  [UPDATE_ANIMAL]    : (state, action) => ({
+    ...state,
+    animal: action.payload.data,
   })
 }
 
