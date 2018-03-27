@@ -21,29 +21,36 @@
       width: 100%;
       border-radius: 5px;
 
-
     }
 
     .content {
-      margin: 1rem;
 
-      .title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      color: white;
+
+
+      .item {
+        font-size: 14px;
+        margin-top: 0.25rem;
+        color: white;
+      }
+
+      .applicationcard-button {
+
+        height: 50px;
+        width: 150px;
+        background-color: #66d9d3;
+        border-radius: 5px;
         display: flex;
         justify-content: center;
-        color: white;
-        border-bottom: 1px solid #66d9d3;
-      }
+        align-items: center;
 
-      .breed {
-        font-size: 12px;
         margin-top: 1rem;
-        color: white;
-      }
 
-      .location {
-        font-size: 12px;
-        margin-top: 0.5rem;
-        color: white;
       }
 
     }

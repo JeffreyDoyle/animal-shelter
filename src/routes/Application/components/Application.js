@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import {browserHistory} from 'react-router';
 import '../styles/Application.scss'
+import Details from './Details';
+import About from './About';
 
-class Applications extends Component {
+class Application extends Component {
   constructor (props) {
     super(props)
   }
@@ -10,13 +12,21 @@ class Applications extends Component {
   componentWillMount () {
   }
 
+  componentDidMount() {
+    this.props.getApplication(this.props.applicationId);
+  }
+
   render () {
+
     return (
-      <div className={'ApplicationsWrapper'}>
+      <div className={'ApplicationWrapper'}>
+
+        <About application={this.props.application} deleteApplication={this.props.deleteApplication} />
+        <Details application={this.props.application} />
 
       </div>
     )
   }
 }
 
-export default Applications
+export default Application

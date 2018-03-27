@@ -17,7 +17,7 @@ export const GET_APPLICANT_APPLICATIONS = 'GET_APPLICANT_APPLICATIONS'
     creating async actions, especially when combined with redux-thunk! */
 
 export const getAllApplications = () => {
-  const request = axios.post('/application/getall', {
+  const request = axios.post('/application/getAll', {
   })
 
   return {

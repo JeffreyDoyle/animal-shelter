@@ -8,6 +8,7 @@ export const GET_APPLICATION = 'GET_APPLICATION'
 export const UPDATE_APPLICATION = 'UPDATE_APPLICATION'
 export const CREATE_APPLICATION = 'CREATE_APPLICATION'
 export const DELETE_APPLICATION = 'DELETE_APPLICATION'
+export const SET_APPLICATION_ID = 'SET_APPLICATION_ID'
 
 // ------------------------------------
 // Actions
@@ -17,9 +18,17 @@ export const DELETE_APPLICATION = 'DELETE_APPLICATION'
     returns a function for lazy evaluation. It is incredibly useful for
     creating async actions, especially when combined with redux-thunk! */
 
+
+export const setApplicationId = (id) => {
+  return {
+    type: SET_APPLICATION_ID,
+    id: id
+  }
+}
+
 export const getApplication = (applicationID) => {
   const request = axios.post('/application/getone', {
-    applicationID: applicationID
+    applicationId: applicationID
   })
 
   return {
@@ -66,6 +75,7 @@ export const actions = {
   updateApplication,
   createApplication,
   deleteApplication,
+  setApplicationId,
 }
 
 // ------------------------------------
@@ -88,16 +98,28 @@ const ACTION_HANDLERS = {
     ...state,
     application: action.payload.data,
   }),
+  [SET_APPLICATION_ID]    : (state, action) => ({
+    ...state,
+    applicationId: action.id,
+  })
 }
 
 // ------------------------------------
 // Reducer
 // ------------------------------------
 const initialState = {
-  application: null,
+  application: {
+    "applicationId": 1,
+    "typeOfHome": "apartment",
+    "yearlyBudget": 10000,
+    "otherPets": "none",
+    "applicationStatus": "pending",
+    "animalId": 4
+  },
+  applicationId: '1',
 }
 
-export default function searchReducer (state = initialState, action) {
+export default function applicationReducer (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]
 
   return handler ? handler(state, action) : state

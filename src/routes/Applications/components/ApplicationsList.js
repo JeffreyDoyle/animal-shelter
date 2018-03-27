@@ -12,17 +12,29 @@ class Applications extends Component {
   componentWillMount () {
   }
 
+  componentDidMount() {
+    this.props.getAllApplications();
+  }
+
   render () {
     return (
       <div className={'ApplicationsListWrapper'}>
 
         <Header />
 
-        <ApplicationCard />
+        <div className={'resultsContent'}>
+          {
+            this.props.applications ? this.props.applications.map((result) => {
 
-        <ApplicationCard />
+                return (
+                  <ApplicationCard application={result} />
+                )
+              })
+              :
+              null
+          }
 
-        <ApplicationCard />
+        </div>
 
       </div>
     )
