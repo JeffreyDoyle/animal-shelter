@@ -6,7 +6,7 @@ import AdvancedContainer from '../containers/AdvancedContainer';
 
 class Advanced extends Component {
   constructor (props) {
-    super(props)x
+    super(props)
   }
 
   componentWillMount () {
@@ -14,7 +14,7 @@ class Advanced extends Component {
 
   render () {
     return (
-      <div className={'ApplicationsWrapper'}>
+      <div className={'AdvancedWrapper'}>
         <Header />
         <AdvancedContainer />
       </div>

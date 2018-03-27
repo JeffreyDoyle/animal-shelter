@@ -18,6 +18,8 @@ const mapDispatchToProps = {
 }
 
 const mapStateToProps = (state) => ({
+  popular: state.search.popular,
+  auth: state.auth
 })
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:

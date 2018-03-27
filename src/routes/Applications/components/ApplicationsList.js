@@ -3,6 +3,7 @@ import {browserHistory} from 'react-router';
 import '../styles/ApplicationsList.scss'
 import ApplicationCard from './ApplicationCard';
 import Header from './Header';
+import {getApplicantApplications} from "../modules/applications";
 
 class Applications extends Component {
   constructor (props) {
@@ -13,14 +14,18 @@ class Applications extends Component {
   }
 
   componentDidMount() {
-    this.props.getAllApplications();
+    if (this.props.auth.userType == 'staff') {
+      this.props.getAllApplications();
+    } else {
+      this.props.getApplicantApplications(this.props.auth.phone);
+    }
   }
 
   render () {
     return (
       <div className={'ApplicationsListWrapper'}>
 
-        <Header />
+        <Header auth={this.props.auth} />
 
         <div className={'resultsContent'}>
           {

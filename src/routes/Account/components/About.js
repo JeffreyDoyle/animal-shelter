@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import {browserHistory} from 'react-router';
 import '../styles/About.scss'
-import {deleteAnimal} from "../modules/animal";
 
-
-class Animal extends Component {
+class Profile extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -19,9 +17,9 @@ class Animal extends Component {
 
   };
 
-  updateAnimal = () => {
+  updateProfile = () => {
 
-    this.props.updateAnimal({
+    this.props.updateAccount({
 
 
     })
@@ -34,40 +32,23 @@ class Animal extends Component {
         <div className={'AboutInner'}>
 
           <div className={'title'}>
-            {this.props.data.animalName}
+            {this.props.data ? this.props.data.name : null}
           </div>
 
           <div className={'item'}>
-            <div className={'description'}>Species:</div><input id="animal-species" type="text" name="species" placeholder="" />
+            <div className={'description'}>Name:</div><input id="animal-species" type="text" name="species" placeholder={this.props.data ? this.props.data.name : ''} />
           </div>
 
           <div className={'item'}>
-            <div className={'description'}>Breed:</div><input id="animal-breed" type="text" name="species" placeholder="Golden Retriever" />
+            <div className={'description'}>Phone:</div><input id="animal-breed" type="text" name="species" placeholder={this.props.data ? this.props.data.phone : ''} />
           </div>
 
           <div className={'item'}>
-            <div className={'description'}>Age:</div><input type="text" name="age" placeholder="10" />
+            <div className={'description'}>User Type:</div><input type="text" name="age" placeholder={this.props.data ? this.props.data.userType : ''} />
           </div>
 
-          <div className={'item'}>
-            <div className={'description'}>Sex:</div><input id="animal-sex" type="text" name="sex" placeholder="Male" />
-          </div>
-
-          <div className={'item'}>
-            <div className={'description'}>Type:</div><input id="animal-type" type="text" name="type" placeholder="Domestic" />
-          </div>
-
-          {/*<div className={'euthenization-timer'}>*/}
-            {/*<div className={'euth-title'}>TIME UNTIL EUTHENIZATION</div>*/}
-            {/*<div className={'countdown'}>{this.state.timer} days</div>*/}
-          {/*</div>*/}
-
-          <div className={'deleteButton'} onClick={this.updateAnimal}>
-            Update this Animal
-          </div>
-
-          <div className={'deleteButton'} onClick={() => {this.props.deleteAnimal('a')}}>
-            Delete this Animal
+          <div className={'deleteButton'} onClick={this.updateProfile}>
+            Update this Account
           </div>
 
         </div>
@@ -76,4 +57,4 @@ class Animal extends Component {
   }
 }
 
-export default Animal
+export default Profile

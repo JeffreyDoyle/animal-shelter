@@ -49,6 +49,21 @@ class Query extends Component {
             Reset
           </div>
 
+          <div className={'popularSection'}>
+
+            <div className={'mostPopularLabel'}>
+              Species: {this.props.popular}
+            </div>
+
+            <div className={'popularQueryButton'} onClick={() => {this.props.getAll()}}>
+              View Most Popular Species
+            </div>
+
+            <div className={'popularQueryButton'} onClick={() => {this.props.getAll()}}>
+              View Least Popular Species
+            </div>
+          </div>
+
         </div>
 
 

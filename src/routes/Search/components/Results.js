@@ -17,7 +17,7 @@ class Results extends Component {
     return (
         <div className={'ResultsWrapper'}>
 
-          <Header />
+          <Header auth={this.props.auth} />
 
           <div className={'resultsContent'}>
 

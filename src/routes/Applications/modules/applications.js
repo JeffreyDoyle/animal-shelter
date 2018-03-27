@@ -26,9 +26,9 @@ export const getAllApplications = () => {
   }
 }
 
-export const getOverseenApplications = (staffId) => {
+export const getOverseenApplications = (phone) => {
   const request = axios.post('/application/oversee', {
-    staffId: staffId
+    phone: phone
   })
 
   return {
@@ -37,9 +37,9 @@ export const getOverseenApplications = (staffId) => {
   }
 }
 
-export const getApplicantApplications = (applicantId) => {
+export const getApplicantApplications = (phone) => {
   const request = axios.post('/application/applicant', {
-    applicantId: applicantId
+    phone: phone
   })
 
   return {

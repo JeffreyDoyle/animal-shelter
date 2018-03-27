@@ -1,25 +1,25 @@
 import { connect } from 'react-redux'
-import { getProfile, updateProfile } from '../modules/account'
+import { getAccount, updateAccount } from '../modules/account'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
     wiring in the actions and state necessary to render a presentational
     component - in this case, the counter:   */
 
-import Animal from '../components/Animal'
+import Account from '../components/Account'
 
 /*  Object of action creators (can also be function that returns object).
     Keys will be passed as props to presentational components. Here we are
     implementing our wrapper around increment; the component doesn't care   */
 
 const mapDispatchToProps = {
-  getProfile : (id) => getProfile(id),
-  updateProfile : (profile) => getProfile(profile)
+  getAccount : (id, type) => getAccount(id, type),
+  updateAccount : (profile) => updateAccount(profile)
 }
 
 const mapStateToProps = (state) => ({
-  profile : state.account.profile,
-  userId : state.auth.userId,
+  account : state.account.account,
+  auth : state.auth,
 })
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:
@@ -36,4 +36,4 @@ const mapStateToProps = (state) => ({
     Selectors are composable. They can be used as input to other selectors.
     https://github.com/reactjs/reselect    */
 
-export default connect(mapStateToProps, mapDispatchToProps)(Animal)
+export default connect(mapStateToProps, mapDispatchToProps)(Account)

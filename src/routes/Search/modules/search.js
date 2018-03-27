@@ -82,7 +82,8 @@ const ACTION_HANDLERS = {
 // Reducer
 // ------------------------------------
 const initialState = {
-  results: []
+  results: [],
+  popular: 'cat',
 }
 
 export default function searchReducer (state = initialState, action) {

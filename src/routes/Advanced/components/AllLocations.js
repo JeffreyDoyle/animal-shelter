@@ -17,7 +17,7 @@ class AllLocations extends Component {
 
         <div className={'LocationsWithAllAnimalsInner'}>
 
-          <div className={'LocationsWithAllAnimalsButton'}>
+          <div className={'LocationsWithAllAnimalsButton'} onClick={() => {this.props.action()}}>
             Get locations with all animals
           </div>
           <div className={'ListOfLocations'}>

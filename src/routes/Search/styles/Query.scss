@@ -67,13 +67,48 @@
 
       cursor: pointer;
 
-      transition: height 0.5s, width 0.5s, margin-top 0.5s;
-
       //&:hover {
       //  height: 75px;
       //  width: 125px;
       //  margin-top: 2.5rem;
       //}
+
+    }
+
+    .popularSection {
+      color: white;
+
+      margin-top: 2rem;
+
+      border-top: 1px solid #f26c4f;
+
+      padding-top: 2rem;
+
+    }
+
+    .mostPopularLabel {
+      color: white;
+      text-align: center;
+    }
+
+    .popularQueryButton {
+
+      margin: auto;
+      margin-top: 2rem;
+
+      height: 50px;
+      width: 200px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 5px;
+
+      color: white;
+      background-color: #f26c4f;
+
+      cursor: pointer;
 
     }
 

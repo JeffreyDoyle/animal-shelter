@@ -1,5 +1,7 @@
 import { connect } from 'react-redux'
-import { getApplicantApplications, getOverseenApplications, getAllApplications } from '../modules/advanced'
+import {
+  getLocationsWithAllBreeds, getLocationsWithAllAnimals, getLocationsWithCity, reseedDB
+} from '../modules/advanced'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
@@ -9,9 +11,10 @@ import { getApplicantApplications, getOverseenApplications, getAllApplications }
 import AdvancedList from '../components/AdvancedList'
 
 const mapDispatchToProps = {
-  getApplicantApplications : (applicantId) => getApplicantApplications(applicantId),
-  getOverseenApplications : (userId) => getOverseenApplications(userId),
-  getAllApplications : () => getAllApplications()
+  getLocationsWithAllBreeds : () => getLocationsWithAllBreeds(),
+  getLocationsWithAllAnimals : () => getLocationsWithAllAnimals(),
+  getLocationsWithCity : (city) => getLocationsWithCity(city),
+  reseedDB : () => reseedDB()
 }
 
 const mapStateToProps = (state) => ({

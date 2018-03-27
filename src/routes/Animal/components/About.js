@@ -38,23 +38,23 @@ class Animal extends Component {
           </div>
 
           <div className={'item'}>
-            <div className={'description'}>Species:</div><input id="animal-species" type="text" name="species" placeholder="" />
+            <div className={'description'}>Name:</div><input id="animal-species" type="text" name="species" placeholder={this.props.data.animalName} />
           </div>
 
           <div className={'item'}>
-            <div className={'description'}>Breed:</div><input id="animal-breed" type="text" name="species" placeholder="Golden Retriever" />
+            <div className={'description'}>Price:</div><input id="animal-breed" type="text" name="species" placeholder={this.props.data.price} />
           </div>
 
           <div className={'item'}>
-            <div className={'description'}>Age:</div><input type="text" name="age" placeholder="10" />
+            <div className={'description'}>Sex:</div><input type="text" name="age" placeholder={this.props.data.sex} />
           </div>
 
           <div className={'item'}>
-            <div className={'description'}>Sex:</div><input id="animal-sex" type="text" name="sex" placeholder="Male" />
+            <div className={'description'}>Weight:</div><input id="animal-sex" type="text" name="sex" placeholder={this.props.data.weight} />
           </div>
 
           <div className={'item'}>
-            <div className={'description'}>Type:</div><input id="animal-type" type="text" name="type" placeholder="Domestic" />
+            <div className={'description'}>Special Needs:</div><input id="animal-type" type="text" name="type" placeholder={this.props.data.specialNeeds} />
           </div>
 
           {/*<div className={'euthenization-timer'}>*/}

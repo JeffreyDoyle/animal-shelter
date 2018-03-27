@@ -7,6 +7,7 @@ import AnimalRoute from './Animal'
 import ApplicationsRoute from './Applications'
 import AdvancedRoute from './Advanced'
 import ApplicationRoute from './Application'
+import AccountRoute from './Account'
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -21,7 +22,8 @@ export const createRoutes = (store) => ({
     AnimalRoute(store),
     ApplicationsRoute(store),
     AdvancedRoute(store),
-    ApplicationRoute(store)
+    ApplicationRoute(store),
+    AccountRoute(store)
   ]
 })
 

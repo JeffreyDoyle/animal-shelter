@@ -4,8 +4,8 @@ import axios from 'axios'
 // Constants
 // ------------------------------------
 
-export const GET_PROFILE = 'GET_PROFILE'
-export const UPDATE_PROFILE = 'UPDATE_PROFILE'
+export const GET_ACCOUNT = 'GET_ACCOUNT'
+export const UPDATE_ACCOUNT = 'UPDATE_ACCOUNT'
 
 // ------------------------------------
 // Actions
@@ -15,46 +15,46 @@ export const UPDATE_PROFILE = 'UPDATE_PROFILE'
     returns a function for lazy evaluation. It is incredibly useful for
     creating async actions, especially when combined with redux-thunk! */
 
-export const getProfile = (emailId, type) => {
+export const getAccount = (phone, type) => {
   const request = axios.post('/profile', {
-    emailId: emailId,
-    type: type
+    phone: phone,
+    userType: type
   })
 
   return {
-    type: GET_PROFILE,
+    type: GET_ACCOUNT,
     payload: request
   }
 }
 
-export const updateProfile = (profile) => {
+export const updateAccount = (profile) => {
   const request = axios.post('/profile/update', {
     ...profile
   })
 
   return {
-    type: UPDATE_PROFILE,
+    type: UPDATE_ACCOUNT,
     payload: request
   }
 }
 
 
 export const actions = {
-  getProfile,
-  updateProfile
+  getAccount,
+  updateAccount,
 }
 
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [GET_PROFILE]    : (state, action) => ({
+  [GET_ACCOUNT]    : (state, action) => ({
     ...state,
-    profile: action.payload.data
+    account: action.payload.data
   }),
-  [UPDATE_PROFILE] : (state, action) => ({
+  [UPDATE_ACCOUNT] : (state, action) => ({
     ...state,
-    profile: action.payload.data,
+    account: action.payload.data,
   }),
 }
 
@@ -62,7 +62,7 @@ const ACTION_HANDLERS = {
 // Reducer
 // ------------------------------------
 const initialState = {
-  profile: null,
+  account: null,
 }
 
 export default function searchReducer (state = initialState, action) {

@@ -56,7 +56,7 @@ class About extends Component {
           </div>
 
           <div className={'deleteButton'} onClick={() => {this.props.deleteApplication('a')}}>
-            Delete this Animal
+            Delete this Application
           </div>
 
         </div>

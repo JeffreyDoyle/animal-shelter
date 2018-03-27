@@ -15,16 +15,20 @@ class Header extends Component {
       <div className={'header'}>
 
         <div className={'viewApplicationsButton'} onClick={() => {browserHistory.push('/applications')}}>
-          View Applications
+          View {this.props.auth.userType == 'applicant' ? 'My' : ''} Applications
         </div>
 
         <div className={'viewAccountButton'} onClick={() => {browserHistory.push('/account')}}>
           My Account
         </div>
 
-        <div className={'viewAccountButton'} onClick={() => {browserHistory.push('/advanced')}}>
-          Advanced
-        </div>
+        { this.props.auth.userType == 'staff' ?
+          <div className={'viewAccountButton'} onClick={() => {browserHistory.push('/advanced')}}>
+            Advanced
+          </div>
+          :
+          null
+        }
 
       </div>
     )

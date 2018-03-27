@@ -22,9 +22,13 @@ class Header extends Component {
           My Account
         </div>
 
-        <div className={'viewAccountButton'} onClick={() => {browserHistory.push('/advanced')}}>
-          Advanced
-        </div>
+        { this.props.auth.userType == 'staff' ?
+          <div className={'viewAccountButton'} onClick={() => {browserHistory.push('/advanced')}}>
+            Advanced
+          </div>
+          :
+          null
+        }
 
       </div>
     )

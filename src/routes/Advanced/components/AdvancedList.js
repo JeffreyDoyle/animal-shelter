@@ -4,6 +4,7 @@ import '../styles/Applications.scss'
 import AllLocations from './AllLocations';
 import CityLocations from './CityLocations';
 import AllBreedsLocaitons from './AllBreedsLocations';
+import ReseedDB from './ReseedDB';
 
 class AdvancedList extends Component {
   constructor (props) {
@@ -17,11 +18,13 @@ class AdvancedList extends Component {
     return (
       <div className={'ApplicationsListWrapper'}>
 
-        <AllLocations />
+        <AllLocations action={this.props.getLocationsWithAllAnimals}/>
 
-        <CityLocations />
+        <CityLocations action={this.props.getLocationsWithCity} />
 
-        <AllBreedsLocaitons />
+        <AllBreedsLocaitons action={this.props.getLocationsWithAllBreeds} />
+
+        <ReseedDB action={this.props.reseedDB} />
 
       </div>
     )

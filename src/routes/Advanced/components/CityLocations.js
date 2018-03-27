@@ -18,11 +18,11 @@ class CityLocations extends Component {
         <div className={'LocationsInCityInner'}>
 
           <div className={'LocationInputWrapper'}>
-            <div className={'LocationInputButton'}>
+            <div className={'LocationInputButton'} onClick={() => {this.props.action(document.getElementById('Location-Input').value)}} >
               Get locations with this city
             </div>
 
-            <input className={'LocationInput'} />
+            <input id='Location-Input' className={'LocationInput'} />
 
           </div>
 

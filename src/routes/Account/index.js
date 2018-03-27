@@ -1,4 +1,5 @@
 import { injectReducer } from '../../store/reducers'
+import {getApplication, setApplicationId} from "../Application/modules/application";
 
 export default (store) => ({
   path : 'account',
@@ -6,6 +7,7 @@ export default (store) => ({
   getComponent (nextState, cb) {
     /*  Webpack - use 'require.ensure' to create a split point
         and embed an async module loader (jsonp) when bundling   */
+
     require.ensure([], (require) => {
       /*  Webpack - use require callback to define
           dependencies for bundling   */
