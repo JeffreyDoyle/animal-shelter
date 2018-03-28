@@ -74,13 +74,21 @@ class Animal extends Component {
             {/*<div className={'countdown'}>{this.state.timer} days</div>*/}
           {/*</div>*/}
 
-          <div className={'deleteButton'} onClick={() => {this.updateAnimal()}}>
+          {this.props.auth.userType == 'staff' ?
+            <div className={'deleteButton'} onClick={() => {this.updateAnimal()}}>
             Update this Animal
-          </div>
+            </div>
+            :
+            null
+          }
 
-          <div className={'deleteButton'} onClick={() => {this.props.deleteAnimal(this.props.data.animalId)}}>
+          {this.props.auth.userType == 'staff' ?
+            <div className={'deleteButton'} onClick={() => {this.props.deleteAnimal(this.props.data.animalId)}}>
             Delete this Animal
-          </div>
+            </div>
+            :
+            null
+          }
 
         </div>
       </div>

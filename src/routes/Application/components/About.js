@@ -51,13 +51,13 @@ class About extends Component {
             <div className={'description'}>Application Status:</div><input id="animal-sex" type="text" name="sex" placeholder={this.props.application.applicationStatus} />
           </div>
 
-          <div className={'deleteButton'} onClick={this.updateApplication}>
-            Update this Application
-          </div>
+          {/*<div className={'deleteButton'} onClick={this.updateApplication}>*/}
+            {/*Update this Application*/}
+          {/*</div>*/}
 
-          <div className={'deleteButton'} onClick={() => {this.props.deleteApplication('a')}}>
-            Delete this Application
-          </div>
+          {/*<div className={'deleteButton'} onClick={() => {this.props.deleteApplication('a')}}>*/}
+            {/*Delete this Application*/}
+          {/*</div>*/}
 
         </div>
       </div>

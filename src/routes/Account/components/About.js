@@ -47,9 +47,9 @@ class Profile extends Component {
             <div className={'description'}>User Type:</div><input type="text" name="age" placeholder={this.props.data ? this.props.data.userType : ''} />
           </div>
 
-          <div className={'deleteButton'} onClick={this.updateProfile}>
-            Update this Account
-          </div>
+          {/*<div className={'deleteButton'} onClick={this.updateProfile}>*/}
+            {/*Update this Account*/}
+          {/*</div>*/}
 
         </div>
       </div>

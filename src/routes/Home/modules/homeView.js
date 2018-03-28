@@ -22,8 +22,6 @@ export const login = (emailId, userType) => (dispatch) => {
       console.log(response);
       if (response.payload.data) {
         browserHistory.push('/search');
-      } else {
-        browserHistory.push('/search');
       }
     }
   );

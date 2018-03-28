@@ -23,7 +23,7 @@ class Animal extends Component {
     return (
       <div className={'AnimalWrapper'}>
 
-        <About data={this.props.animal} deleteAnimal={this.props.deleteAnimal} updateAnimal={this.props.updateAnimal} />
+        <About data={this.props.animal} auth={this.props.auth} deleteAnimal={this.props.deleteAnimal} updateAnimal={this.props.updateAnimal} />
         <Details data={this.props.animal} />
 
       </div>

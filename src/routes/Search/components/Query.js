@@ -54,12 +54,21 @@ class Query extends Component {
 
           <div className={'popularSection'}>
 
-            <div className={'mostPopularLabel'}>
-              Species: {this.state.popular ? this.props.popular : this.props.unpopular}
-            </div>
-            <div className={'mostPopularLabel'}>
-              Count: {this.state.popular ? this.props.popularCount : this.props.unpopularCount}
-            </div>
+            {(this.props.popular && this.props.popular != '') ?
+              <div className={'mostPopularLabel'}>
+                Species: {this.state.popular ? this.props.popular : this.props.unpopular}
+              </div>
+              :
+              null
+            }
+
+            {(this.props.popularCount && this.props.popularCount != -1) ?
+              <div className={'mostPopularLabel'}>
+                Count: {this.state.popular ? this.props.popularCount : this.props.unpopularCount}
+              </div>
+              :
+              null
+            }
 
             <div className={'popularQueryButton'} onClick={() => {this.props.popularity(); this.setState({popular: true})}}>
               View Most Popular Species

@@ -101,10 +101,10 @@ const ACTION_HANDLERS = {
 // ------------------------------------
 const initialState = {
   results: [],
-  popular: 'cat',
-  popularCount: 1,
-  unpopular: 'dog',
-  unpopularCount: 2,
+  popular: '',
+  popularCount: -1,
+  unpopular: '',
+  unpopularCount: -1,
 }
 
 export default function searchReducer (state = initialState, action) {
