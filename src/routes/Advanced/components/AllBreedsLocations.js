@@ -22,6 +22,12 @@ class AllBreedsLocations extends Component {
           </div>
           <div className={'ListOfLocations'}>
 
+            {
+              this.props.data.forEach(item => {
+                <LocationCard title={item} />
+              })
+            }
+
             <LocationCard title={"Brian's #1 Animal Shelter"} />
             <LocationCard title={"Bobby Table's super shelter"} />
 

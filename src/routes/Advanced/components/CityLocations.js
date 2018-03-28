@@ -28,6 +28,12 @@ class CityLocations extends Component {
 
           <div className={'ListOfLocations'}>
 
+            {
+              this.props.data.forEach(item => {
+                <LocationCard title={item} />
+              })
+            }
+
             <LocationCard title={"Vancouver"} />
             <LocationCard title={"Toronto"} />
             <LocationCard title={"Halifax"} />
