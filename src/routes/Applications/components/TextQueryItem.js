@@ -19,7 +19,7 @@ class TextQueryItem extends Component {
           <div className={'queryTitle'}>
             {this.props.title}
           </div>
-          <input className={'input'} />
+          <input id={'input-' + this.props.title} className={'input'} />
 
         </div>
 

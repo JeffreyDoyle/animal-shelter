@@ -3,7 +3,7 @@ import {browserHistory} from 'react-router';
 import '../styles/Animal.scss'
 import Details from './Details';
 import About from './About';
-import {deleteAnimal} from "../modules/animal";
+import {deleteAnimal, updateAnimal} from "../modules/animal";
 
 
 class Animal extends Component {
@@ -23,7 +23,7 @@ class Animal extends Component {
     return (
       <div className={'AnimalWrapper'}>
 
-        <About data={this.props.animal} deleteAnimal={this.props.deleteAnimal} />
+        <About data={this.props.animal} deleteAnimal={this.props.deleteAnimal} updateAnimal={this.props.updateAnimal} />
         <Details data={this.props.animal} />
 
       </div>

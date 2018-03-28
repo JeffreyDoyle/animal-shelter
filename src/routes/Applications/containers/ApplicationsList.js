@@ -1,5 +1,7 @@
 import { connect } from 'react-redux'
-import { getApplicantApplications, getOverseenApplications, getAllApplications } from '../modules/applications'
+import {
+  getApplicantApplications, getOverseenApplications, getAllApplications, queryApplications
+} from '../modules/applications'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
@@ -11,7 +13,8 @@ import ApplicationsList from '../components/ApplicationsList'
 const mapDispatchToProps = {
   getApplicantApplications : (applicantId) => getApplicantApplications(applicantId),
   getOverseenApplications : (userId) => getOverseenApplications(userId),
-  getAllApplications : () => getAllApplications()
+  getAllApplications : () => getAllApplications(),
+  queryApplications : (query) => queryApplications(query)
 }
 
 const mapStateToProps = (state) => ({

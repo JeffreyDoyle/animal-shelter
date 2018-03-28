@@ -7,6 +7,7 @@ import axios from 'axios'
 export const GET_ALL_APPLICATIONS = 'GET_ALL_APPLICATIONS'
 export const GET_OVERSEEN_APPLICATIONS = 'GET_OVERSEEN_APPLICATIONS'
 export const GET_APPLICANT_APPLICATIONS = 'GET_APPLICANT_APPLICATIONS'
+export const QUERY_APPLICATIONS = 'QUERY_APPLICATIONS'
 
 // ------------------------------------
 // Actions
@@ -48,10 +49,22 @@ export const getApplicantApplications = (phone) => {
   }
 }
 
+export const queryApplications = (query) => {
+  const request = axios.post('/application/query', {
+    ...query
+  })
+
+  return {
+    type: QUERY_APPLICATIONS,
+    payload: request
+  }
+}
+
 export const actions = {
   getAllApplications,
   getApplicantApplications,
   getOverseenApplications,
+  queryApplications
 }
 
 // ------------------------------------
@@ -67,6 +80,10 @@ const ACTION_HANDLERS = {
     applications: action.payload.data,
   }),
   [GET_APPLICANT_APPLICATIONS] : (state, action) => ({
+    ...state,
+    applications: action.payload.data,
+  }),
+  [QUERY_APPLICATIONS] : (state, action) => ({
     ...state,
     applications: action.payload.data,
   })

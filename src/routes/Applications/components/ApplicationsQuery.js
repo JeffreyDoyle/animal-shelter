@@ -19,16 +19,36 @@ class ApplicationsQuery extends Component {
   }
 
   addToColumns = (item) => {
+    let columns = this.state.columns;
+    columns.push(item);
+    console.log('add', columns);
     this.setState({
-      columns: this.state.columns.push(item)
+      columns: columns
     });
   };
 
   removeFromColumns = (item) => {
+    let columns = this.state.columns;
+    columns.splice(columns.indexOf(item), 1);
+    console.log('remove', columns);
     this.setState({
-      columns: this.state.columns.remove(item)
+      columns: columns
     })
   };
+
+  renderQuery = () => {
+
+    let input = document.getElementById('input-Input').value;
+    let columns = this.state.columns;
+    let type = this.state.type;
+
+    this.props.queryApplications({
+      columns,
+      input,
+      type
+    })
+
+  }
 
   render () {
     return (
@@ -52,15 +72,15 @@ class ApplicationsQuery extends Component {
 
           <div className={'subtitle'}>Request type</div>
 
-          <RadioQueryItem title={'Animal Id'} action={() => {this.props.query('max')}}/>
+          <RadioQueryItem title={'Animal Id'} action={() => {this.setState({type: 'animal_id'})}}/>
 
-          <RadioQueryItem title={'Application Id'} action={() => {this.props.query('avg')}}/>
+          <RadioQueryItem title={'Application Id'} action={() => {this.setState({type: 'application_id'})}}/>
 
           <div className={'subtitle'}>Request input</div>
 
-          <TextQueryItem title={'Input'} action={() => {this.props.query('avg')}}/>
+          <TextQueryItem title={'Input'} />
 
-          <div className={'queryButton'} onClick={() => {this.props.getAll()}}>
+          <div className={'queryButton'} onClick={() => {this.renderQuery()}}>
             Search
           </div>
 

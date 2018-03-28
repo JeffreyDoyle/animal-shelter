@@ -10,6 +10,14 @@ class RadioQueryItem extends Component {
   componentWillMount () {
   }
 
+  handleClick = () => {
+    if (document.getElementById('box-' + this.props.title).checked) {
+      this.props.onCheck();
+    } else {
+      this.props.onUnCheck();
+    }
+  }
+
   render () {
     return (
       <div className={'TextQueryItemWrapper'}>
@@ -19,7 +27,7 @@ class RadioQueryItem extends Component {
           <div className={'queryTitle'}>
             {this.props.title}
           </div>
-          <input type={'checkbox'} className={'input-radio'} onClick={this.props.action}/>
+          <input id={'box-' + this.props.title} type={'checkbox'} className={'input-radio'} onClick={() => {this.handleClick()}}/>
 
         </div>
 

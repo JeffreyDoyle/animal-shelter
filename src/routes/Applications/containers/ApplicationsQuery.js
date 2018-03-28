@@ -1,26 +1,25 @@
 import { connect } from 'react-redux'
-import { getAnimal, deleteAnimal, updateAnimal } from '../modules/animal'
+import {
+  getApplicantApplications, getOverseenApplications, getAllApplications, queryApplications
+} from '../modules/applications'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
     wiring in the actions and state necessary to render a presentational
     component - in this case, the counter:   */
 
-import Animal from '../components/Animal'
-
-/*  Object of action creators (can also be function that returns object).
-    Keys will be passed as props to presentational components. Here we are
-    implementing our wrapper around increment; the component doesn't care   */
+import ApplicationsQuery from '../components/ApplicationsQuery'
 
 const mapDispatchToProps = {
-  getAnimal : (id) => getAnimal(id),
-  deleteAnimal : (id) => deleteAnimal(id),
-  updateAnimal : (animal) => updateAnimal(animal)
+  getApplicantApplications : (applicantId) => getApplicantApplications(applicantId),
+  getOverseenApplications : (userId) => getOverseenApplications(userId),
+  getAllApplications : () => getAllApplications(),
+  queryApplications : (query) => queryApplications(query)
 }
 
 const mapStateToProps = (state) => ({
-  animal : state.animal.animal,
-  animalId: state.animal.animalId
+  applications : state.applications.applications,
+  auth: state.auth,
 })
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:
@@ -37,4 +36,4 @@ const mapStateToProps = (state) => ({
     Selectors are composable. They can be used as input to other selectors.
     https://github.com/reactjs/reselect    */
 
-export default connect(mapStateToProps, mapDispatchToProps)(Animal)
+export default connect(mapStateToProps, mapDispatchToProps)(ApplicationsQuery)

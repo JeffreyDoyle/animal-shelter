@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {browserHistory} from 'react-router';
 import '../styles/Applications.scss'
 import ApplicationsList from '../containers/ApplicationsList';
-import ApplicationsQuery from './ApplicationsQuery';
+import ApplicationsQuery from '../containers/ApplicationsQuery';
 
 class Applications extends Component {
   constructor (props) {

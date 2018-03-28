@@ -51,14 +51,7 @@ export const deleteAnimal = (id) => {
 
 export const updateAnimal = (animal) => {
   const request = axios.post('/animal/update', {
-    animalId: animal.animalId,
-    imgUrl: animal.imgUrl,
-    birthdate: animal.birthdate,
-    weight: animal.weight,
-    animalName: animal.animalName,
-    specialNeeds: animal.specialNeeds,
-    intakeDate: animal.intakeDate,
-    sex: animal.sex,
+    ...animal
   })
 
   return {
@@ -88,7 +81,7 @@ const ACTION_HANDLERS = {
   }),
   [UPDATE_ANIMAL]    : (state, action) => ({
     ...state,
-    animal: action.payload.data,
+    animal: action.payload.data ? action.payload.data : initialState.animal ,
   })
 }
 
