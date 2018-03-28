@@ -28,8 +28,8 @@ class AllBreedsLocations extends Component {
               })
             }
 
-            <LocationCard title={"Brian's #1 Animal Shelter"} />
-            <LocationCard title={"Bobby Table's super shelter"} />
+            {/*<LocationCard title={"Brian's #1 Animal Shelter"} />*/}
+            {/*<LocationCard title={"Bobby Table's super shelter"} />*/}
 
           </div>
         </div>

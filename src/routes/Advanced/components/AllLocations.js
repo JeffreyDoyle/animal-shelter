@@ -28,8 +28,8 @@ class AllLocations extends Component {
               })
             }
 
-            <LocationCard title={"Jeff's Basement"} />
-            <LocationCard title={"Jess's Basement"} />
+            {/*<LocationCard title={"Jeff's Basement"} />*/}
+            {/*<LocationCard title={"Jess's Basement"} />*/}
 
           </div>
         </div>

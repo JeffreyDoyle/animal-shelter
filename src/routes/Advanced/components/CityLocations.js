@@ -34,9 +34,9 @@ class CityLocations extends Component {
               })
             }
 
-            <LocationCard title={"Vancouver"} />
-            <LocationCard title={"Toronto"} />
-            <LocationCard title={"Halifax"} />
+            {/*<LocationCard title={"Vancouver"} />*/}
+            {/*<LocationCard title={"Toronto"} />*/}
+            {/*<LocationCard title={"Halifax"} />*/}
 
           </div>
         </div>

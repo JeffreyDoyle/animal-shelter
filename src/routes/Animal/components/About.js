@@ -37,6 +37,13 @@ class Animal extends Component {
       specialNeeds: needs,
       weight: weight,
     })
+
+    document.getElementById('animal-name').value = ''
+    document.getElementById('animal-price').value = ''
+    document.getElementById('animal-sex').value = ''
+    document.getElementById('animal-weight').value = ''
+    document.getElementById('animal-needs').value = ''
+
   }
 
   render () {

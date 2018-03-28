@@ -81,7 +81,7 @@ const ACTION_HANDLERS = {
   }),
   [UPDATE_ANIMAL]    : (state, action) => ({
     ...state,
-    animal: action.payload.data ? action.payload.data : initialState.animal ,
+    animal: action.payload.data ? action.payload.data : state.animal ,
   })
 }
 
