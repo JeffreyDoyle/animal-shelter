@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import {
-  getLocationsWithAllBreeds, getLocationsWithAllAnimals, getLocationsWithCity, reseedDB
+  getLocationsWithAllBreeds, getLocationsWithAllAnimals, getLocationsWithCity, reseedDB, queryDelete
 } from '../modules/advanced'
 
 /*  This is a container component. Notice it does not contain any JSX,
@@ -14,10 +14,14 @@ const mapDispatchToProps = {
   getLocationsWithAllBreeds : () => getLocationsWithAllBreeds(),
   getLocationsWithAllAnimals : () => getLocationsWithAllAnimals(),
   getLocationsWithCity : (city) => getLocationsWithCity(city),
-  reseedDB : () => reseedDB()
+  reseedDB : () => reseedDB(),
+  queryDelete : (name) => queryDelete(name)
 }
 
 const mapStateToProps = (state) => ({
+  locationsWithAllAnimals: state.advanced.locationsWithAllAnimals,
+  locationsWithAllBreeds: state.advanced.locationsWithAllBreeds,
+  locationsWithCity: state.advanced.locationsWithCity,
 })
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:

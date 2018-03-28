@@ -5,6 +5,7 @@ import AllLocations from './AllLocations';
 import CityLocations from './CityLocations';
 import AllBreedsLocaitons from './AllBreedsLocations';
 import ReseedDB from './ReseedDB';
+import QueryDelete from './QueryDelete';
 
 class AdvancedList extends Component {
   constructor (props) {
@@ -18,11 +19,13 @@ class AdvancedList extends Component {
     return (
       <div className={'ApplicationsListWrapper'}>
 
-        <AllLocations action={this.props.getLocationsWithAllAnimals}/>
+        <AllLocations data={this.props.locationsWithAllAnimals} action={this.props.getLocationsWithAllAnimals}/>
 
-        <CityLocations action={this.props.getLocationsWithCity} />
+        <CityLocations data={this.props.locationsWithCity} action={this.props.getLocationsWithCity} />
 
-        <AllBreedsLocaitons action={this.props.getLocationsWithAllBreeds} />
+        <AllBreedsLocaitons data={this.props.locationsWithAllBreeds} action={this.props.getLocationsWithAllBreeds} />
+
+        <QueryDelete action={this.props.queryDelete} />
 
         <ReseedDB action={this.props.reseedDB} />
 

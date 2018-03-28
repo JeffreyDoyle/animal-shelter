@@ -8,6 +8,9 @@ import RadioQueryItem from './RadioQueryItem';
 class Query extends Component {
   constructor (props) {
     super(props)
+    this.state = {
+      popular: true
+    }
   }
 
   componentWillMount () {
@@ -41,7 +44,7 @@ class Query extends Component {
 
           <RadioQueryItem title={'Max Adoption Fee'} action={() => {this.props.query('max')}}/>
 
-          <RadioQueryItem title={'Average Adoption Fee'} action={() => {this.props.query('avg')}}/>
+          {/*<RadioQueryItem title={'Average Adoption Fee'} action={() => {this.props.query('avg')}}/>*/}
 
           <RadioQueryItem title={'Min Adoption Fee'} action={() => {this.props.query('min')}}/>
 
@@ -52,14 +55,17 @@ class Query extends Component {
           <div className={'popularSection'}>
 
             <div className={'mostPopularLabel'}>
-              Species: {this.props.popular}
+              Species: {this.state.popular ? this.props.popular : this.props.unpopular}
+            </div>
+            <div className={'mostPopularLabel'}>
+              Count: {this.state.popular ? this.props.popularCount : this.props.unpopularCount}
             </div>
 
-            <div className={'popularQueryButton'} onClick={() => {this.props.getAll()}}>
+            <div className={'popularQueryButton'} onClick={() => {this.props.popularity(); this.setState({popular: true})}}>
               View Most Popular Species
             </div>
 
-            <div className={'popularQueryButton'} onClick={() => {this.props.getAll()}}>
+            <div className={'popularQueryButton'} onClick={() => {this.props.popularity(); this.setState({popular: false})}}>
               View Least Popular Species
             </div>
           </div>

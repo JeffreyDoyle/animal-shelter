@@ -9,6 +9,7 @@ import axios from 'axios'
 
 export const QUERY = 'QUERY'
 export const GET_ALL = 'GET_ALL'
+export const POPULARITY = 'POPULARITY'
 
 // ------------------------------------
 // Actions
@@ -59,6 +60,16 @@ export const query = (queryType) => {
   }
 }
 
+export const popularity = () => {
+  const request = axios.post('/animals/popularity', {
+  })
+
+  return {
+    type: POPULARITY,
+    payload: request
+  }
+}
+
 export const actions = {
   query,
   getAll
@@ -75,6 +86,13 @@ const ACTION_HANDLERS = {
   [GET_ALL] : (state, action) => ({
     ...state,
     results: action.payload.data ? action.payload.data : initialState.results,
+  }),
+  [POPULARITY] : (state, action) => ({
+    ...state,
+    popular: action.payload.data ? action.payload.data.popular : initialState.popular,
+    popularCount: action.payload.data ? action.payload.data.popularCount : initialState.popularCount,
+    unpopular: action.payload.data ? action.payload.data.unpopular : initialState.unpopular,
+    unpopularCount: action.payload.data ? action.payload.data.unpopularCount : initialState.unpopularCount,
   })
 }
 
@@ -84,6 +102,9 @@ const ACTION_HANDLERS = {
 const initialState = {
   results: [],
   popular: 'cat',
+  popularCount: 1,
+  unpopular: 'dog',
+  unpopularCount: 2,
 }
 
 export default function searchReducer (state = initialState, action) {

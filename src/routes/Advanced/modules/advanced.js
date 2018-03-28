@@ -12,6 +12,7 @@ export const GET_LOCATIONS_WITH_ALL_ANIMALS = 'GET_LOCATIONS_WITH_ALL_ANIMALS'
 export const GET_LOCATIONS_WITH_CITY = 'GET_LOCATIONS_WITH_CITY'
 export const GET_LOCATIONS_WITH_ALL_BREEDS = 'GET_LOCATIONS_WITH_ALL_BREEDS'
 export const RESEED_DB = 'RESEED_DB'
+export const QUERY_DELETE = 'QUERY_DELETE'
 
 // ------------------------------------
 // Actions
@@ -48,6 +49,17 @@ export const getLocationsWithCity = (city) => {
 
   return {
     type: GET_LOCATIONS_WITH_CITY,
+    payload: request
+  }
+}
+
+export const queryDelete = (name) => {
+  const request = axios.post('/animal/querydelete', {
+    input: name
+  })
+
+  return {
+    type: QUERY_DELETE,
     payload: request
   }
 }

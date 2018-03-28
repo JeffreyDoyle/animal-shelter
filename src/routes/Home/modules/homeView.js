@@ -53,7 +53,6 @@ export const actions = {
 const ACTION_HANDLERS = {
   [LOGIN]    : (state, action) => ({
     ...state,
-    email: action.payload.data ? action.payload.data.email : "",
     userType: action.payload.data ? action.payload.data.userType : "",
     phone: action.payload.data ? action.payload.data.phone : "",
     name: action.payload.data ? action.payload.data.name : "",
