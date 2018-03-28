@@ -55,7 +55,7 @@ export const getLocationsWithCity = (city) => {
 
 export const queryDelete = (name) => {
   const request = axios.post('/animal/querydelete', {
-    input: name
+    name: name
   })
 
   return {
