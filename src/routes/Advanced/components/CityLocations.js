@@ -29,8 +29,8 @@ class CityLocations extends Component {
           <div className={'ListOfLocations'}>
 
             {
-              this.props.data.forEach(item => {
-                <LocationCard title={item} />
+              this.props.data.map((item) => {
+                <LocationCard title={item.data} />
               })
             }
 

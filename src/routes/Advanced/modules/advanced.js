@@ -44,7 +44,7 @@ export const getLocationsWithAllAnimals = () => {
 
 export const getLocationsWithCity = (city) => {
   const request = axios.post('/locations/query', {
-    input: city
+    cityName: city
   })
 
   return {
@@ -87,15 +87,15 @@ export const actions = {
 const ACTION_HANDLERS = {
   [GET_LOCATIONS_WITH_ALL_ANIMALS]    : (state, action) => ({
     ...state,
-    locationsWithAllAnimals: action.payload.data,
+    locationsWithAllAnimals: action.payload.data ? action.payload.data : state.locationsWithAllAnimals,
   }),
   [GET_LOCATIONS_WITH_CITY] : (state, action) => ({
     ...state,
-    locationsWithCity: action.payload.data,
+    locationsWithCity: action.payload.data ? action.payload.data : state.locationsWithCity,
   }),
   [GET_LOCATIONS_WITH_ALL_BREEDS] : (state, action) => ({
     ...state,
-    locationsWithAllBreeds: action.payload.data,
+    locationsWithAllBreeds: action.payload.data ? action.payload.data : state.locationsWithAllBreeds,
   })
 }
 

@@ -9,7 +9,7 @@ class ApplicationsQuery extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      columns: ['animal_id'],
+      columns: ['animal_id', 'application_id'],
       type: '',
       input: '',
     };
@@ -71,7 +71,7 @@ class ApplicationsQuery extends Component {
 
               <SelectQueryItem title={'Type Of Home'} onCheck={() => {this.addToColumns('home_type')}} onUnCheck={() => {this.removeFromColumns('type_of_home')}} />
 
-              <SelectQueryItem title={'Application Id'} onCheck={() => {this.addToColumns('application_id')}} onUnCheck={() => {this.removeFromColumns('application_id')}} />
+              {/*<SelectQueryItem title={'Application Id'} onCheck={() => {this.addToColumns('application_id')}} onUnCheck={() => {this.removeFromColumns('application_id')}} />*/}
 
               <div className={'subtitle'}>Request type</div>
 

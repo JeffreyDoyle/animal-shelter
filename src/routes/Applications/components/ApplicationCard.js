@@ -18,7 +18,7 @@ class Applications extends Component {
 
           <div className={'content'}>
 
-            { this.props.application.applicationId ? <div className={'item'}>ID: {this.props.application.applicationId}</div> : null }
+            {/*{ this.props.application.applicationId ? <div className={'item'}>ID: {this.props.application.applicationId}</div> : null }*/}
 
             { this.props.application.typeOfHome ? <div className={'item'}>Type: {this.props.application.typeOfHome}</div> : null }
 
