@@ -73,7 +73,7 @@ export const actions = {
 const ACTION_HANDLERS = {
   [GET_ANIMAL]    : (state, action) => ({
     ...state,
-    animal: action.payload.data,
+    animal: action.payload.data ? action.payload.data : state.animal,
   }),
   [SET_ANIMAL_ID]    : (state, action) => ({
     ...state,
@@ -81,7 +81,7 @@ const ACTION_HANDLERS = {
   }),
   [UPDATE_ANIMAL]    : (state, action) => ({
     ...state,
-    animal: action.payload.data ? action.payload.data : state.animal ,
+    animal: action.payload.data ? action.payload.data : state.animal,
   })
 }
 
@@ -89,17 +89,8 @@ const ACTION_HANDLERS = {
 // Reducer
 // ------------------------------------
 const initialState = {
-  animal: {
-    "imgUrl": "https://image.ibb.co/kua6Zn/2.jpg",
-    "birthdate": "2014-07-22T00:00:00.000Z",
-    "animalId": 2,
-    "weight": 8,
-    "animalName": "Abbath",
-    "specialNeeds": "diabetic",
-    "intakeDate": "2018-02-10T00:00:00.000Z",
-    "sex": "f",
-    "price": 150
-  },
+  animal: null,
+  animalId: null
 }
 
 export default function animalReducer (state = initialState, action) {

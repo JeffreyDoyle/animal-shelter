@@ -28,7 +28,7 @@ class Applications extends Component {
 
             { this.props.application.applicationStatus ?  <div className={'item'}>Status: {this.props.application.applicationStatus}</div> : null }
 
-            <div onClick={() => {browserHistory.push('/application?id=' + this.props.application.animalId)}} className={'applicationcard-button'}>View Application</div>
+            <div onClick={() => {browserHistory.push('/application?id=' + this.props.application.applicationId)}} className={'applicationcard-button'}>View Application</div>
             <div onClick={() => {browserHistory.push('/animal?id=' + this.props.application.animalId)}} className={'applicationcard-button'}>View Animal</div>
 
           </div>

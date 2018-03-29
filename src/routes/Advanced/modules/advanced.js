@@ -23,7 +23,7 @@ export const QUERY_DELETE = 'QUERY_DELETE'
     creating async actions, especially when combined with redux-thunk! */
 
 export const getLocationsWithAllBreeds = () => {
-  const request = axios.post('/locations/allBreeds', {
+  const request = axios.post('/locations/allbreeds', {
   })
 
   return {

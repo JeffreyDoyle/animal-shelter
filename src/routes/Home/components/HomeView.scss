@@ -57,6 +57,15 @@ $blur: 4px;
 
     }
 
+
+    @keyframes mymove {
+      0% {left: 56%;  top: 50%;}
+      25% {left: 15%; top: 50%;}
+      50% {left: 15%;  top: 15%;}
+      75% {left: 56%;  top: 15%;}
+      100% {left: 56%; top: 50%;}
+    }
+
     .bottomSquare {
 
       position: absolute;
@@ -75,6 +84,10 @@ $blur: 4px;
 
       filter: opacity(0.9);
 
+    }
+
+    .bottomSquareLoading {
+      animation: mymove 5s infinite;
     }
 
 

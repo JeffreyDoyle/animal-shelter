@@ -108,15 +108,8 @@ const ACTION_HANDLERS = {
 // Reducer
 // ------------------------------------
 const initialState = {
-  application: {
-    "applicationId": 1,
-    "typeOfHome": "apartment",
-    "yearlyBudget": 10000,
-    "otherPets": "none",
-    "applicationStatus": "pending",
-    "animalId": 4
-  },
-  applicationId: '1',
+  application: null,
+  applicationId: null,
 }
 
 export default function applicationReducer (state = initialState, action) {

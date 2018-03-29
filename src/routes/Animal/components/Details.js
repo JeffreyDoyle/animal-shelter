@@ -19,8 +19,11 @@ class Animal extends Component {
 
         <div className={'DetailsInner'}>
 
-          <img className={'image'} src={this.props.data.imgUrl} />
-
+          {this.props.data != null ?
+            <img className={'image'} src={this.props.data.imgUrl}/>
+            :
+            null
+          }
 
 
           {/*<div className={'map'}>*/}

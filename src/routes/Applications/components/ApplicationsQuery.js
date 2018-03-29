@@ -9,7 +9,7 @@ class ApplicationsQuery extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      columns: [],
+      columns: ['animal_id'],
       type: '',
       input: '',
     };
@@ -58,31 +58,39 @@ class ApplicationsQuery extends Component {
 
           <div className={'title'}>Search Applications</div>
 
-          <div className={'subtitle'}>Columns you want</div>
+          {(this.props.auth && this.props.auth.userType == "staff") ?
+            <div>
 
-          <SelectQueryItem title={'Application Status'} onCheck={() => {this.addToColumns('application_status')}} onUnCheck={() => {this.removeFromColumns('application_status')}} />
+              <div className={'subtitle'}>Columns you want</div>
 
-          <SelectQueryItem title={'Other Pets'} onCheck={() => {this.addToColumns('other_pets')}} onUnCheck={() => {this.removeFromColumns('other_pets')}} />
+              <SelectQueryItem title={'Application Status'} onCheck={() => {this.addToColumns('status')}} onUnCheck={() => {this.removeFromColumns('application_status')}} />
 
-          <SelectQueryItem title={'Yearly Budget'} onCheck={() => {this.addToColumns('yearly_budget')}} onUnCheck={() => {this.removeFromColumns('yearly_budget')}} />
+              <SelectQueryItem title={'Other Pets'} onCheck={() => {this.addToColumns('pets')}} onUnCheck={() => {this.removeFromColumns('other_pets')}} />
 
-          <SelectQueryItem title={'Type Of Home'} onCheck={() => {this.addToColumns('type_of_home')}} onUnCheck={() => {this.removeFromColumns('type_of_home')}} />
+              <SelectQueryItem title={'Yearly Budget'} onCheck={() => {this.addToColumns('budget')}} onUnCheck={() => {this.removeFromColumns('yearly_budget')}} />
 
-          <SelectQueryItem title={'Application Id'} onCheck={() => {this.addToColumns('application_id')}} onUnCheck={() => {this.removeFromColumns('application_id')}} />
+              <SelectQueryItem title={'Type Of Home'} onCheck={() => {this.addToColumns('home_type')}} onUnCheck={() => {this.removeFromColumns('type_of_home')}} />
 
-          <div className={'subtitle'}>Request type</div>
+              <SelectQueryItem title={'Application Id'} onCheck={() => {this.addToColumns('application_id')}} onUnCheck={() => {this.removeFromColumns('application_id')}} />
 
-          <RadioQueryItem title={'Animal Id'} action={() => {this.setState({type: 'animal_id'})}}/>
+              <div className={'subtitle'}>Request type</div>
 
-          <RadioQueryItem title={'Application Id'} action={() => {this.setState({type: 'application_id'})}}/>
+              <RadioQueryItem title={'Animal Id'} action={() => {this.setState({type: 'animal_id'})}}/>
 
-          <div className={'subtitle'}>Request input</div>
+              <RadioQueryItem title={'Application Id'} action={() => {this.setState({type: 'application_id'})}}/>
 
-          <TextQueryItem title={'Input'} />
+              <div className={'subtitle'}>Request input</div>
 
-          <div className={'queryButton'} onClick={() => {this.renderQuery()}}>
-            Search
-          </div>
+              <TextQueryItem title={'Input'} />
+
+              <div className={'queryButton'} onClick={() => {this.renderQuery()}}>
+                Search
+              </div>
+
+            </div>
+            :
+            null
+          }
 
         </div>
 

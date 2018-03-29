@@ -12,6 +12,7 @@ class AllBreedsLocations extends Component {
   }
 
   render () {
+    console.log('all breeds', this.props.data);
     return (
       <div className={'LocationsWithAllAnimalsWrapper'}>
 
@@ -23,8 +24,10 @@ class AllBreedsLocations extends Component {
           <div className={'ListOfLocations'}>
 
             {
-              this.props.data.forEach(item => {
-                <LocationCard title={item} />
+              this.props.data.map((item) => {
+                return (
+                  <LocationCard title={item.name} />
+                )
               })
             }
 

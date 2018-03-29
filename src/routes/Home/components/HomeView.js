@@ -11,6 +11,17 @@ class HomeView extends Component {
   componentWillMount () {
   }
 
+  handleLogIn = (type) => {
+    if (document.getElementById('email-input').value != '') {
+      document.getElementById('bottom-square').classList.add('bottomSquareLoading');
+    }
+    if (type === 'applicant') {
+      this.props.login(document.getElementById('email-input').value, 'applicant')
+    } else {
+      this.props.login(document.getElementById('email-input').value, 'staff')
+    }
+  }
+
   render () {
     return (
       <div className={'HomeView'}>
@@ -21,7 +32,7 @@ class HomeView extends Component {
           <div className={'topSquare'}>
           </div>
 
-          <div className={'bottomSquare'}>
+          <div id='bottom-square' className={'bottomSquare'}>
           </div>
 
           <img className={'image'} src={cat} />
@@ -38,10 +49,10 @@ class HomeView extends Component {
 
           <div className={'getStartedButtonWrapper'}>
 
-            <div className={'getStartedButton'} onClick={() => {this.props.login(document.getElementById('email-input').value, 'applicant')}}>
+            <div className={'getStartedButton'} onClick={() => {this.handleLogIn('applicant')}}>
               Login as Adopter
             </div>
-            <div className={'getStartedButton'} onClick={() => {this.props.login(document.getElementById('email-input').value, 'staff')}}>
+            <div className={'getStartedButton'} onClick={() => {this.handleLogIn('staff')}}>
               Login as Staff
             </div>
           </div>

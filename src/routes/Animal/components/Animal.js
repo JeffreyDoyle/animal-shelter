@@ -15,8 +15,16 @@ class Animal extends Component {
   }
 
   componentDidMount() {
-    this.props.getAnimal(this.props.animalId);
   }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.animal == null && nextProps.animalId != null) {
+      this.props.getAnimal(nextProps.animalId);
+    } else if ((this.props.animal != null) && (this.props.animalId != nextProps.animal.animalId)) {
+      this.props.getAnimal(nextProps.animalId);
+    }
+  }
+
 
   render () {
 

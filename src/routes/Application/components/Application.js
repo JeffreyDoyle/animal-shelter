@@ -13,7 +13,15 @@ class Application extends Component {
   }
 
   componentDidMount() {
-    this.props.getApplication(this.props.applicationId);
+    //this.props.getApplication(this.props.applicationId);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.applications == null && nextProps.applicationId != null) {
+      this.props.getApplication(nextProps.applicationId);
+    } else if ((this.props.application != null) && (this.props.applicationId != nextProps.application.applicationId)) {
+      this.props.getAnimal(nextProps.applicationId);
+    }
   }
 
   render () {

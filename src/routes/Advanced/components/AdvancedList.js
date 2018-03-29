@@ -19,7 +19,7 @@ class AdvancedList extends Component {
     return (
       <div className={'ApplicationsListWrapper'}>
 
-        <AllLocations data={this.props.locationsWithAllAnimals} action={this.props.getLocationsWithAllAnimals}/>
+        {/*<AllLocations data={this.props.locationsWithAllAnimals} action={this.props.getLocationsWithAllAnimals}/>*/}
 
         <CityLocations data={this.props.locationsWithCity} action={this.props.getLocationsWithCity} />
 
@@ -27,7 +27,7 @@ class AdvancedList extends Component {
 
         <QueryDelete action={this.props.queryDelete} />
 
-        <ReseedDB action={this.props.reseedDB} />
+        {/*<ReseedDB action={this.props.reseedDB} />*/}
 
       </div>
     )
