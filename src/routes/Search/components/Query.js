@@ -9,7 +9,8 @@ class Query extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      popular: true
+      init: false,
+      popular: null
     }
   }
 
@@ -54,28 +55,28 @@ class Query extends Component {
 
           <div className={'popularSection'}>
 
-            {(this.props.popular && this.props.popular != '') ?
+            {(this.props.popular && (this.props.popular != '') && (this.state.init == true)) ?
               <div className={'mostPopularLabel'}>
-                Species: {this.state.popular ? this.props.popular : this.props.unpopular}
+                {this.state.popular ? 'Breed: ' + this.props.popularName : 'Breed: ' + this.props.unpopularName}
               </div>
               :
               null
             }
 
-            {(this.props.popularCount && this.props.popularCount != -1) ?
+            {(this.props.popularCount && (this.props.popularCount != '') && (this.state.init == true)) ?
               <div className={'mostPopularLabel'}>
-                Count: {this.state.popular ? this.props.popularCount : this.props.unpopularCount}
+                {this.state.popular ? 'Count: ' + this.props.popularCount : 'Count: ' + this.props.unpopularCount}
               </div>
               :
               null
             }
 
-            <div className={'popularQueryButton'} onClick={() => {this.props.popularity(); this.setState({popular: true})}}>
-              View Most Popular Species
+            <div className={'popularQueryButton'} onClick={() => {this.props.popular(); this.setState({init: true, popular: true})}}>
+              View Most Popular Breed
             </div>
 
-            <div className={'popularQueryButton'} onClick={() => {this.props.popularity(); this.setState({popular: false})}}>
-              View Least Popular Species
+            <div className={'popularQueryButton'} onClick={() => {this.props.unpopular(); this.setState({init: true, popular: false})}}>
+              View Least Popular Breed
             </div>
           </div>
 

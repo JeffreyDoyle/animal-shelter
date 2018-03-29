@@ -19,8 +19,8 @@ class Application extends Component {
   componentWillReceiveProps(nextProps) {
     if (this.props.applications == null && nextProps.applicationId != null) {
       this.props.getApplication(nextProps.applicationId);
-    } else if ((this.props.application != null) && (this.props.applicationId != nextProps.application.applicationId)) {
-      this.props.getAnimal(nextProps.applicationId);
+    } else if ((this.props.application != null) && (this.props.applicationId != nextProps.application.applicationId) && (nextProps.applicationId != null)) {
+      this.props.getApplication(nextProps.applicationId);
     }
   }
 

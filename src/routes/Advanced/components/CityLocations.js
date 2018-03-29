@@ -30,7 +30,9 @@ class CityLocations extends Component {
 
             {
               this.props.data.map((item) => {
-                <LocationCard title={item.data} />
+                return (
+                  <LocationCard title={item.name} />
+                )
               })
             }
 

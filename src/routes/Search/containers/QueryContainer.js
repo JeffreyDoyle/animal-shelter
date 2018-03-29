@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { query, getAll, popularity } from '../modules/search'
+import { query, getAll, popular, unpopular } from '../modules/search'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
@@ -15,13 +15,14 @@ import Query from '../components/Query'
 const mapDispatchToProps = {
   query : (queryType) => query(queryType),
   getAll : () => getAll(),
-  popularity: () => popularity(),
+  popular: () => popular(),
+  unpopular: () => unpopular(),
 }
 
 const mapStateToProps = (state) => ({
-  popular: state.search.popular,
+  popularName: state.search.popularName,
   popularCount: state.search.popularCount,
-  unpopular: state.search.unpopular,
+  unpopularName: state.search.unpopularName,
   unpopularCount: state.search.unpopularCount,
   auth: state.auth
 })

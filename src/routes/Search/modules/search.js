@@ -9,7 +9,8 @@ import axios from 'axios'
 
 export const QUERY = 'QUERY'
 export const GET_ALL = 'GET_ALL'
-export const POPULARITY = 'POPULARITY'
+export const POPULAR = 'POPULAR'
+export const UNPOPULAR = 'UNPOPULAR'
 
 // ------------------------------------
 // Actions
@@ -61,7 +62,7 @@ export const query = (queryType) => {
 }
 
 export const popularity = () => {
-  const request = axios.post('/animals/popularity', {
+  const request = axios.post('/animal/popular', {
   })
 
   return {
@@ -70,9 +71,31 @@ export const popularity = () => {
   }
 }
 
+export const popular = () => {
+  const request = axios.post('/animal/popular', {
+  })
+
+  return {
+    type: POPULAR,
+    payload: request
+  }
+}
+
+export const unpopular = () => {
+  const request = axios.post('/animal/unpopular', {
+  })
+
+  return {
+    type: UNPOPULAR,
+    payload: request
+  }
+}
+
 export const actions = {
   query,
-  getAll
+  getAll,
+  popular,
+  unpopular
 }
 
 // ------------------------------------
@@ -87,12 +110,15 @@ const ACTION_HANDLERS = {
     ...state,
     results: action.payload.data ? action.payload.data : initialState.results,
   }),
-  [POPULARITY] : (state, action) => ({
+  [POPULAR] : (state, action) => ({
     ...state,
-    popular: action.payload.data ? action.payload.data.popular : initialState.popular,
-    popularCount: action.payload.data ? action.payload.data.popularCount : initialState.popularCount,
-    unpopular: action.payload.data ? action.payload.data.unpopular : initialState.unpopular,
-    unpopularCount: action.payload.data ? action.payload.data.unpopularCount : initialState.unpopularCount,
+    popularName: action.payload.data ? action.payload.data[0].breed : initialState.popularName,
+    popularCount: action.payload.data ? action.payload.data[0].avgApplication : initialState.popularCount,
+  }),
+  [UNPOPULAR] : (state, action) => ({
+    ...state,
+    unpopularName: action.payload.data ? action.payload.data[0].breed  : initialState.unpopularName,
+    unpopularCount: action.payload.data ? action.payload.data[0].avgApplication : initialState.unpopularCount,
   })
 }
 
@@ -101,10 +127,10 @@ const ACTION_HANDLERS = {
 // ------------------------------------
 const initialState = {
   results: [],
-  popular: '',
-  popularCount: -1,
-  unpopular: '',
-  unpopularCount: -1,
+  popularName: '',
+  popularCount: '',
+  unpopularName: '',
+  unpopularCount: '',
 }
 
 export default function searchReducer (state = initialState, action) {

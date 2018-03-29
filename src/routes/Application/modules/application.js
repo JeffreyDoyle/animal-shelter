@@ -84,7 +84,8 @@ export const actions = {
 const ACTION_HANDLERS = {
   [GET_APPLICATION]    : (state, action) => ({
     ...state,
-    application: action.payload.data
+    application: action.payload.data ? action.payload.data : state.application,
+    applicationId: action.payload.data ? action.payload.data.applicationId : state.applicationId,
   }),
   [DELETE_APPLICATION] : (state, action) => ({
     ...state,

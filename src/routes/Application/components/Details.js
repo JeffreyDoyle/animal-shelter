@@ -32,7 +32,7 @@ class Details extends Component {
 
           {/*</div>*/}
 
-          <div className={'detailsButton'} onClick={() => {browserHistory.push('/animal?id=' + this.props.application.animalId)}}>
+          <div className={'detailsButtonApplication'} onClick={() => {browserHistory.push('/animal?id=' + this.props.application.animalId)}}>
             View Animal
           </div>
 

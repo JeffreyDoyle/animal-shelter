@@ -59,11 +59,11 @@ $blur: 4px;
 
 
     @keyframes mymove {
-      0% {left: 56%;  top: 50%;}
-      25% {left: 15%; top: 50%;}
-      50% {left: 15%;  top: 15%;}
-      75% {left: 56%;  top: 15%;}
-      100% {left: 56%; top: 50%;}
+      0% {left: 56%;  top: 50%; }
+      25% {left: 15%; top: 50%; }
+      50% {left: 15%;  top: 15%; }
+      75% {left: 56%;  top: 15%; }
+      100% {left: 56%; top: 50%; }
     }
 
     .bottomSquare {
@@ -87,7 +87,7 @@ $blur: 4px;
     }
 
     .bottomSquareLoading {
-      animation: mymove 5s infinite;
+      animation: mymove 5s infinite linear;
     }
 
 

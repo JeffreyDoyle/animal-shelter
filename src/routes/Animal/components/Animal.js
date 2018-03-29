@@ -20,7 +20,7 @@ class Animal extends Component {
   componentWillReceiveProps(nextProps) {
     if (this.props.animal == null && nextProps.animalId != null) {
       this.props.getAnimal(nextProps.animalId);
-    } else if ((this.props.animal != null) && (this.props.animalId != nextProps.animal.animalId)) {
+    } else if ((this.props.animal != null) && (this.props.animalId != nextProps.animal.animalId) && (nextProps.animalId != null)) {
       this.props.getAnimal(nextProps.animalId);
     }
   }

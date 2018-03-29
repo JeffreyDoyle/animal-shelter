@@ -74,6 +74,7 @@ const ACTION_HANDLERS = {
   [GET_ANIMAL]    : (state, action) => ({
     ...state,
     animal: action.payload.data ? action.payload.data : state.animal,
+    animalId: action.payload.data ? action.payload.data.animalId : state.animalId,
   }),
   [SET_ANIMAL_ID]    : (state, action) => ({
     ...state,
@@ -82,6 +83,7 @@ const ACTION_HANDLERS = {
   [UPDATE_ANIMAL]    : (state, action) => ({
     ...state,
     animal: action.payload.data ? action.payload.data : state.animal,
+    animalId: action.payload.data ? action.payload.data.animalId : state.animalId,
   })
 }
 
